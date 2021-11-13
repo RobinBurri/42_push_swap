@@ -1,46 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 13:03:23 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/11 14:32:56 by rburri           ###   ########.fr       */
+/*   Created: 2021/11/13 19:13:13 by rburri            #+#    #+#             */
+/*   Updated: 2021/11/13 19:27:20 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "../push_swap.h"
 
-static void ft_array_loader(int a[], int b[], int argc, char **argv)
+int	ft_atoi(const char *str)
 {
-	int i;
+	int	i;
+	int	sign;
+	int	res;
 
 	i = 0;
-	if (argc < 2)
+	sign = 1;
+	res = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		printf("Error\n");
-		return ;
-	}
-	while (i < argc - 1)
-	{
-		a[i] = atoi(argv[i + 1]);
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-}
-
-int main(int argc, char **argv)
-{
-	int a[argc - 1];
-	int *b;
-	int i;
-	
-	i = 0;
-	ft_array_loader(a, b, argc, argv);
-	while (i < argc - 1)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		printf("a: %d\n", a[i]);
+		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
+	return (res * sign);
 }
