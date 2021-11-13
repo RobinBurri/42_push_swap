@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 19:28:00 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/13 19:55:34 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/13 20:51:40 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,13 @@ int	ft_is_int(const char *str)
 	i = 0;
 	sign = 1;
 	res = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) == 0 && (!(str[i] == '-' || str[i] == '+')))
+			return (1);
 		i++;
+	}
+	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
@@ -34,10 +38,7 @@ int	ft_is_int(const char *str)
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = (res * 10) + (str[i] - '0');
-		i++;
-	}
+		res = (res * 10) + (str[i++] - '0');
 	if (res > MAX_INT || res < MIN_INT)
 		return (1);
 	return (0);

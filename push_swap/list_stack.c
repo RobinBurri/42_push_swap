@@ -6,43 +6,12 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:26:23 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/13 20:10:12 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/13 21:16:55 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
-static int ft_check_and_load(int argc, char **argv, t_stack *a)
-{
-	int	i;
-	int j;
-	if (argc < 2)
-		return (1);
-	int array[argc - 1];
-	i = argc - 1;
-	j = 0;
-	while (i >= 1)
-	{
-		if (ft_is_int(argv[i]) == 1)
-			return (1);
-		array[i - 1] = ft_atoi(argv[i]);
-		push(a, ft_atoi(argv[i]));
-		i--;
-	}
-	i = 1;
-	while (j < argc - 1)
-	{
-		while (i < argc -1)
-		{
-			if (array[j] == array[i++])
-				return (1);
-		}
-		j++;
-		i = j + 1;
-	}
-	return (0);
-}
 
 int main(int argc, char **argv)
 {
@@ -52,16 +21,9 @@ int main(int argc, char **argv)
 
 	ret = ft_check_and_load(argc, argv, &a);
 	if (ret != 0)
-		{
-			ft_putstr("Error\n");
 			return (1);
-		}
 
-	int t;
-	while (((t = pop(&a))!= STACK_EMPTY))
-	{
-		printf("t = %d\n", t);
-	}
+	ft_print_stack(&a);
 	return (0);
 }
 
@@ -87,3 +49,14 @@ int pop(t_stack *mystack)
 	return (result);
 }
 
+
+void	ft_print_stack(t_stack *mystack)
+{
+	t_node *tmp = *mystack;
+	while (tmp != NULL)
+	{
+		ft_putnbr(tmp->value);
+		ft_putchar('\n');
+		tmp = tmp->next;		
+	}
+}

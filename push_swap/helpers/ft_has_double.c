@@ -1,17 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_a.c                                           :+:      :+:    :+:   */
+/*   ft_has_double.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 18:54:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/13 20:58:39 by rburri           ###   ########.fr       */
+/*   Created: 2021/11/13 20:37:05 by rburri            #+#    #+#             */
+/*   Updated: 2021/11/13 20:49:38 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*pop the first element of b and push it to a;
-Nothing is done when there is only one or no element*/
-
 #include "../push_swap.h"
 
+int	ft_has_double(int array[], int len)
+{
+	int	j;
+	int	i;
+
+	j = 0;
+	i = 1;
+	while (j < len)
+	{
+		while (i < len)
+		{
+			if (array[j] == array[i++])
+			{
+				ft_putstr("Error\n");
+				free(array);
+				return (1);
+			}
+		}
+		j++;
+		i = j + 1;
+	}
+	free(array);
+	return (0);
+}

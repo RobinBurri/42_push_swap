@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_a.c                                           :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 18:54:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/13 20:58:39 by rburri           ###   ########.fr       */
+/*   Created: 2021/11/13 21:08:21 by rburri            #+#    #+#             */
+/*   Updated: 2021/11/13 21:09:09 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*pop the first element of b and push it to a;
-Nothing is done when there is only one or no element*/
-
 #include "../push_swap.h"
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
