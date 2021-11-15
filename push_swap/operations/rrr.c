@@ -6,8 +6,15 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:57:19 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/13 18:57:22 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/15 14:10:32 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	rrr(t_stack *a, t_stack *b)
+{
+	rev_rotate_a(a);
+	rev_rotate_a(b);
+	ft_putstr("rrr\n");
+}

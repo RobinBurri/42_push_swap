@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:54:46 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 11:09:23 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/15 14:18:15 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@ Nothing is done when there is only one or no element*/
 
 #include "../push_swap.h"
 
-void	ft_push_b(t_stack *a, t_stack *b)
+void	push_b(t_stack *a, t_stack *b)
 {
+	int	tmp;
+
 	if (*a != NULL)
 	{
-		int tmp;
 		tmp = ft_pop(a);
 		ft_push(b, tmp);
-		ft_putstr("pb\n");	
+		ft_putstr("pb\n");
 	}
 }

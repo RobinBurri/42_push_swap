@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:28:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 11:08:57 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/15 14:19:46 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 # include "helpers/helpers.h"
 # include "operations/operations.h"
 
-
 # define INT_MIN -2147483648
 # define STACK_EMPTY INT_MIN
 
 int		ft_check_and_load(int argc, char **argv, t_stack *a);
 void	ft_print_stack(t_stack *mystack);
-int 	ft_stklen(t_stack *mystack);
+int		ft_stklen(t_stack *mystack);
 
 #endif

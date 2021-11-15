@@ -6,15 +6,15 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:56:16 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 12:49:27 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/15 13:17:54 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_rr(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b)
 {
-	ft_rotate(&a);
-	ft_rotate(&b);
+	rotate_a(a);
+	rotate_b(b);
 	ft_putstr("rr\n");
 }

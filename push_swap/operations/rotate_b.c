@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:55:53 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 12:48:16 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/15 14:13:03 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 #include "../push_swap.h"
 
-void	ft_rotate_b(t_stack *b)
+void	rotate_b(t_stack *b)
 {
-	t_node *tmp_head = *b;
-	t_node *tmp_end = *b;
+	t_node	*tmp_head;
+	t_node	*tmp_end;
+
+	tmp_head = *b;
+	tmp_end = *b;
 	while (tmp_end->next != NULL)
 		tmp_end = tmp_end->next;
-	ft_swap(&tmp_end->value, &tmp_head->value);
+	tmp_end->next = *b;
+	*b = tmp_head->next;
+	tmp_end->next->next = NULL;
 	ft_putstr("rb\n");
 }
