@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:41:02 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/13 20:50:17 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/15 11:03:17 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_check_and_load(int argc, char **argv, t_stack *a)
 			return (1);
 		}
 		array[i - 1] = ft_atoi(argv[i]);
-		push(a, ft_atoi(argv[i]));
+		ft_push(a, ft_atoi(argv[i]));
 		i--;
 	}
 	return (ft_has_double(array, argc - 1));

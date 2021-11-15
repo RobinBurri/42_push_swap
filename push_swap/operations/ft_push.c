@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 18:53:37 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 10:54:17 by rburri           ###   ########.fr       */
+/*   Created: 2021/11/15 10:59:01 by rburri            #+#    #+#             */
+/*   Updated: 2021/11/15 10:59:33 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ss(t_stack *a, t_stack *b)
+int	ft_push(t_stack *mystack, int value)
 {
-	swap_a(a);
-	swap_b(b);
-	ft_putstr("ss\n");
+	t_node *newnode = malloc(sizeof(t_node));
+	if (newnode == NULL)
+		return (0);
+	newnode->value = value;
+	newnode->next = *mystack;
+	*mystack = newnode;
+	return (1);
 }

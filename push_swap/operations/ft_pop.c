@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   ft_pop.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 18:53:37 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 10:54:17 by rburri           ###   ########.fr       */
+/*   Created: 2021/11/15 11:00:44 by rburri            #+#    #+#             */
+/*   Updated: 2021/11/15 11:01:01 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ss(t_stack *a, t_stack *b)
+int ft_pop(t_stack *mystack)
 {
-	swap_a(a);
-	swap_b(b);
-	ft_putstr("ss\n");
+	if (*mystack == NULL)
+		return (STACK_EMPTY);
+	int result = (*mystack)->value;
+	t_node *tmp = *mystack;
+	*mystack = (*mystack)->next;
+	free(tmp);
+	return (result);
 }
