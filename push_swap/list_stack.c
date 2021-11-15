@@ -6,15 +6,12 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:26:23 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 15:00:31 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/15 15:56:27 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
-
-
 
 int main(int argc, char **argv)
 {
