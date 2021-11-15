@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:26:23 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 13:49:12 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/15 15:00:31 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int main(int argc, char **argv)
 	len = ft_stklen(&a);
 	// printf("stacklen: %d", len);
 	ft_print_stack(&a);
+	putchar('-');
 	putchar('\n');
-	putchar('\n');
+	putchar('a');
 	putchar('\n');
 	rev_rotate_a(&a);
 	ft_print_stack(&a);
@@ -48,7 +49,6 @@ void	ft_print_stack(t_stack *mystack)
 		ft_putchar('\n');
 		tmp = tmp->next;		
 	}
-	ft_putstr("$$$$\n");
 }
 
 int ft_stklen(t_stack *mystack)
