@@ -13,13 +13,12 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "helpers/helpers.h"
-# include "op/operations.h"
+# include "../helpers/helpers.h"
+# include "../op/operations.h"
 
 # define INT_MIN -2147483648
 # define STACK_EMPTY INT_MIN
 
-int		ft_check_and_load(int argc, char **argv, t_stack *a);
 void	ft_print_stack(t_stack *mystack);
 int		ft_stklen(t_stack *mystack);
 

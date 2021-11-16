@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "../op/operations.h"
+#include "../helpers/helpers.h"
 #include <stdio.h>
 
 int main(int argc, char **argv)
@@ -18,13 +20,13 @@ int main(int argc, char **argv)
 	t_stack a = NULL;
 	// t_stack b = NULL;
 	int ret;
-	int len;
+	// int len;
 
+	// len = ft_stklen(&a);
 	ret = ft_check_and_load(argc, argv, &a);
 	if (ret != 0)
 			return (1);
 
-	len = ft_stklen(&a);
 	// printf("stacklen: %d", len);
 	ft_print_stack(&a);
 	putchar('-');

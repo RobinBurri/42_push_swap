@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include "../op/operations.h"
+# include "../push_swap.h"
 
 void	ft_putstr(char const *s);
 void	ft_putchar(char c);

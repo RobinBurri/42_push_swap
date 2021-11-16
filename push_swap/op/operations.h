@@ -14,6 +14,7 @@
 # define OPERATIONS_H
 
 # include "../helpers/helpers.h"
+# include "../push_swap.h"
 
 typedef struct node {
 	int			value;
@@ -34,5 +35,6 @@ void	rotate_a(t_stack *a);
 void	rr(t_stack *a, t_stack *b);
 void	rev_rotate_a(t_stack *a);
 void	rev_rotate_b(t_stack *b);
+int		ft_check_and_load(int argc, char **argv, t_stack *a);
 
 #endif
