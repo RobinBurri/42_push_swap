@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_b.c                                         :+:      :+:    :+:   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 18:55:53 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 14:13:04 by rburri           ###   ########.fr       */
+/*   Created: 2021/11/17 12:29:09 by rburri            #+#    #+#             */
+/*   Updated: 2021/11/17 14:17:37 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*shift up all el of stack b by one. The first el becomes the last one*/
-
 #include "../push_swap.h"
 
-void	rotate_b(t_stack *b)
+void	ft_sort(t_stack *a, t_stack *b)
 {
-	t_node	*tmp_head;
-	t_node	*tmp_end;
+	int	len;
 
-	tmp_head = *b;
-	tmp_end = *b;
-	while (tmp_end->n != NULL)
-		tmp_end = tmp_end->n;
-	tmp_end->n = *b;
-	*b = tmp_head->n;
-	tmp_end->n->n = NULL;
-	ft_putstr("rb\n");
+	len = ft_stklen(a);
+	if (ft_sorted(a) || len == 1)
+		return ;
+	if (len == 2)
+	{
+		swap_a(a);
+		return ;
+	}
+	if (len == 3)
+		ft_sort_three(a);
+	if (len == 5)
+		ft_sort_five(a, b);
 }

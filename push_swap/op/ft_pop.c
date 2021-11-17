@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:00:44 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 14:21:26 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/17 14:10:03 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_pop(t_stack *mystack)
 	tmp = *mystack;
 	if (*mystack == NULL)
 		return (STACK_EMPTY);
-	result = (*mystack)->value;
-	*mystack = (*mystack)->next;
+	result = (*mystack)->v;
+	*mystack = (*mystack)->n;
 	free(tmp);
 	return (result);
 }

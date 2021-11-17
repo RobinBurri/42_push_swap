@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:56:57 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 14:16:43 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/17 14:12:32 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	rev_rotate_b(t_stack *b)
 
 	tmp_head = *b;
 	tmp_end = *b;
-	while (tmp_end->next->next != NULL)
-		tmp_end = tmp_end->next;
-	tmp_end->next->next = tmp_head;
-	*b = tmp_end->next;
-	tmp_end->next = NULL;
+	while (tmp_end->n->n != NULL)
+		tmp_end = tmp_end->n;
+	tmp_end->n->n = tmp_head;
+	*b = tmp_end->n;
+	tmp_end->n = NULL;
 	ft_putstr("rrb\n");
 }

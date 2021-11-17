@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_b.c                                         :+:      :+:    :+:   */
+/*   ft_stklen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 18:55:53 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 14:13:04 by rburri           ###   ########.fr       */
+/*   Created: 2021/11/17 12:31:58 by rburri            #+#    #+#             */
+/*   Updated: 2021/11/17 14:11:53 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*shift up all el of stack b by one. The first el becomes the last one*/
-
 #include "../push_swap.h"
 
-void	rotate_b(t_stack *b)
+int	ft_stklen(t_stack *mystack)
 {
-	t_node	*tmp_head;
-	t_node	*tmp_end;
+	t_node	*tmp;
+	int		i;
 
-	tmp_head = *b;
-	tmp_end = *b;
-	while (tmp_end->n != NULL)
-		tmp_end = tmp_end->n;
-	tmp_end->n = *b;
-	*b = tmp_head->n;
-	tmp_end->n->n = NULL;
-	ft_putstr("rb\n");
+	i = 0;
+	tmp = *mystack;
+	while (tmp != NULL)
+	{
+		i++;
+		tmp = tmp->n;
+	}
+	return (i);
 }
