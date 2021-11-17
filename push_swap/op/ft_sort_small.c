@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_sort_small.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:29:09 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 14:17:37 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/17 16:44:38 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sort(t_stack *a, t_stack *b)
+void	ft_sort_small(t_stack *a, t_stack *b)
 {
 	int	len;
 
@@ -26,6 +26,6 @@ void	ft_sort(t_stack *a, t_stack *b)
 	}
 	if (len == 3)
 		ft_sort_three(a);
-	if (len == 5)
-		ft_sort_five(a, b);
+	if (len == 5 || len == 4)
+		ft_sort_five(a, b, len);
 }

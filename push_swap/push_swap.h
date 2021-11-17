@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:28:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 14:17:58 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/17 16:45:05 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ typedef t_node	*t_stack;
 void	ft_print_stack(t_stack *mystack);
 int		ft_stklen(t_stack *mystack);
 int		ft_sorted(t_stack *stack);
-void	ft_sort(t_stack *a, t_stack *b);
+void	ft_sort_small(t_stack *a, t_stack *b);
 int		ft_stklen(t_stack *mystack);
 void	ft_sort_three(t_stack *a);
-void	ft_sort_five(t_stack *a, t_stack *b);
+void	ft_sort_five(t_stack *a, t_stack *b, int len);
+void	ft_sort_push(t_stack *a);
 
 // helpers:
 void	ft_putstr(char const *s);

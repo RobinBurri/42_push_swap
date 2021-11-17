@@ -6,31 +6,35 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:50:50 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 14:16:57 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/17 16:47:04 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
 void	ft_sort_three(t_stack *a)
 {
-	if ((*a)->v > (*a)->n->v && (*a)->v < (*a)->n->n->v
-		&& (*a)->n->v < (*a)->n->n->v)
+	t_node	*t;
+
+	t = *a;
+	if (t->v > t->n->v && t->v < t->n->n->v
+		&& t->n->v < t->n->n->v)
 		swap_a(a);
-	else if ((*a)->v > (*a)->n->v && (*a)->v > (*a)->n->n->v
-		&& (*a)->n->v < (*a)->n->n->v)
+	else if (t->v > t->n->v && t->v > t->n->n->v
+		&& t->n->v < t->n->n->v)
 		rotate_a(a);
-	else if ((*a)->v < (*a)->n->v && (*a)->v > (*a)->n->n->v
-		&& (*a)->n->v > (*a)->n->n->v)
+	else if (t->v < t->n->v && t->v > t->n->n->v
+		&& t->n->v > t->n->n->v)
 		rev_rotate_a(a);
-	else if ((*a)->v > (*a)->n->v && (*a)->v > (*a)->n->n->v
-		&& (*a)->n->v > (*a)->n->n->v)
+	else if (t->v > t->n->v && t->v > t->n->n->v
+		&& t->n->v > t->n->n->v)
 	{
 		swap_a(a);
 		rev_rotate_a(a);
 	}
-	else if ((*a)->v < (*a)->n->v && (*a)->v < (*a)->n->n->v
-		&& (*a)->n->v > (*a)->n->n->v)
+	else if (t->v < t->n->v && t->v < t->n->n->v
+		&& t->n->v > t->n->n->v)
 	{
 		swap_a(a);
 		rotate_a(a);
