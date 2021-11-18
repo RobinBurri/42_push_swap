@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:53:18 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 14:13:36 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/18 15:00:28 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	swap_b(t_stack *stack)
 
 	tmp = *stack;
 	if (tmp && tmp->n)
+	{
 		ft_swap(&tmp->v, &tmp->n->v);
-	ft_putstr("sb\n");
+		ft_swap(&tmp->i, &tmp->n->i);
+		ft_swap(&tmp->b, &tmp->n->b);
+		ft_putstr("sb\n");
+	}
 }

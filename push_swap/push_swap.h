@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:28:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 16:45:05 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/18 13:23:18 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 typedef struct node {
 	int			v;
+	int			i;
+	int			b;
 	struct node	*n;
 }	t_node;
 
@@ -43,11 +45,10 @@ void	ft_putnbr(int n);
 int		ft_atoi(const char *str);
 int		ft_is_int(const char *str);
 int		ft_isdigit(int c);
-int		ft_has_double(int array[], int len);
 void	ft_swap(int *ptr1, int *ptr2);
 // op
-int		ft_pop(t_stack *mystack);
-int		ft_push(t_stack *mystack, int value);
+void	ft_pop(t_stack *mystack);
+int		ft_push(t_stack *mystack, int value, int index, int batch);
 void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
 void	ss(t_stack *a, t_stack *b);

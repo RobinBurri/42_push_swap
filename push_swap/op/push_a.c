@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:54:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/15 14:18:13 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/18 15:02:39 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,19 @@ Nothing is done when there is only one or no element*/
 
 void	push_a(t_stack *a, t_stack *b)
 {
-	int	tmp;
+	t_node	*tmp;
+	int		value;
+	int		index;
+	int		batch;
 
+	tmp = *b;
 	if (*b != NULL)
 	{
-		tmp = ft_pop(b);
-		ft_push(a, tmp);
+		value = tmp->v;
+		index = tmp->i;
+		batch = tmp->b;
+		ft_pop(b);
+		ft_push(a, value, index, batch);
 		ft_putstr("pa\n");
 	}
 }

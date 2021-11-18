@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_has_double.c                                    :+:      :+:    :+:   */
+/*   ft_sort_big.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 20:37:05 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/13 20:49:38 by rburri           ###   ########.fr       */
+/*   Created: 2021/11/18 09:06:38 by rburri            #+#    #+#             */
+/*   Updated: 2021/11/18 12:37:51 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_has_double(int array[], int len)
-{
-	int	j;
-	int	i;
+// void	ft_sort_big(t_stack *a, t_stack *b, int len)
+// {
+// 	t_node	*tmp;
+// 	int		nb_el_a;
+// 	int		pivot;
 
-	j = 0;
-	i = 1;
-	while (j < len)
-	{
-		while (i < len)
-		{
-			if (array[j] == array[i++])
-			{
-				ft_putstr("Error\n");
-				free(array);
-				return (1);
-			}
-		}
-		j++;
-		i = j + 1;
-	}
-	free(array);
-	return (0);
-}
+// 	tmp = (*a)->n;
+// 	nb_el_a = len / 2;
+// 	pivot = (*a)->v;
+// 	while (nb_el_a > 1)
+// 	{
+// 		while (ft_left_to_sort(a, pivot) != 0)
+// 		{
+// 			return ;
+// 		}
+// 	}
+// }

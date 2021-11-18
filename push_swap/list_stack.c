@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:26:23 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 16:56:01 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/18 15:16:40 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,22 @@ int	main(int argc, char **argv)
 	t_stack	a;
 	t_stack	b;
 	int		ret;
+	int		len;
 
 	a = NULL;
 	b = NULL;
 	ret = ft_check_and_load(argc, argv, &a);
 	if (ret != 0)
+	{
+		ft_putstr("Error\n");
 		return (1);
+	}
+	len = ft_stklen(&a);
 	ft_print_stack(&a);
 	ft_putchar('-');
 	ft_putchar('\n');
-	ft_sort_small(&a, &b);
+	if (len < 6)
+		ft_sort_small(&a, &b);
 	ft_print_stack(&a);
 	ft_putchar('-');
 	ft_putchar('\n');
@@ -41,7 +47,17 @@ void	ft_print_stack(t_stack *mystack)
 	tmp = *mystack;
 	while (tmp != NULL)
 	{
+		ft_putchar('v');
+		ft_putchar(':');
 		ft_putnbr(tmp->v);
+		ft_putchar('-');
+		ft_putchar('i');
+		ft_putchar(':');
+		ft_putnbr(tmp->i);
+		ft_putchar('-');
+		ft_putchar('b');
+		ft_putchar(':');
+		ft_putnbr(tmp->b);
 		ft_putchar('\n');
 		tmp = tmp->n;
 	}
