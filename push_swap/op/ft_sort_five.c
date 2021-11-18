@@ -23,7 +23,7 @@ void	ft_sort_five(t_stack *a, t_stack *b, int len)
 	{
 		if (t->v > t->n->v)
 			swap_a(a);
-		push_b(a, b);
+		push_b(a, b, 0);
 		t = *a;
 	}
 	ft_sort_three(a);

@@ -12,20 +12,45 @@
 
 #include "../push_swap.h"
 
-// void	ft_sort_big(t_stack *a, t_stack *b, int len)
-// {
-// 	t_node	*tmp;
-// 	int		nb_el_a;
-// 	int		pivot;
+void ft_find_and_send(t_stack *a, t_stack *b, t_node *tmp, int mid, int *batch)
+{
+    int i;
 
-// 	tmp = (*a)->n;
-// 	nb_el_a = len / 2;
-// 	pivot = (*a)->v;
-// 	while (nb_el_a > 1)
-// 	{
-// 		while (ft_left_to_sort(a, pivot) != 0)
-// 		{
-// 			return ;
-// 		}
-// 	}
-// }
+    i = 0;
+    while (i < mid)
+	{
+        tmp = *a;
+		if (tmp->i < mid)
+            push_b(a, b, *batch);
+        else if (tmp->i > mid && ft_get_last_el_index(a) < mid)
+        {
+            rev_rotate_a(a);
+            push_b(a, b, *batch);
+        }
+        else if (tmp->i > mid && ft_get_last_el_index(a) > mid)
+        {
+            while (tmp->i > mid)
+                rotate_a(a);
+            push_b(a, b, *batch);    
+        }
+        i++;
+	}
+}
+
+void	ft_sort_big(t_stack *a, t_stack *b, int len)
+{
+	t_node	*tmp;
+	int		mid;
+    int     i;
+    int     batch;
+
+    i = 0;
+	batch = 1;
+    while (ft_sorted(a) != 1 || len != 2)
+    {
+	    mid = len / 2;
+        ft_find_and_send(a, b, tmp, mid, &batch);
+        len = ft_stklen(a);
+    }
+	
+}

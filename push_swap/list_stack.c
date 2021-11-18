@@ -34,6 +34,8 @@ int	main(int argc, char **argv)
 	ft_putchar('\n');
 	if (len < 6)
 		ft_sort_small(&a, &b);
+	else
+		ft_sort_big(&a, &b, len);
 	ft_print_stack(&a);
 	ft_putchar('-');
 	ft_putchar('\n');
