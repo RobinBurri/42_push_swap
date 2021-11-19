@@ -29,14 +29,15 @@ typedef struct node {
 
 typedef t_node	*t_stack;
 
-void	ft_print_stack(t_stack *mystack);
-int		ft_stklen(t_stack *mystack);
-int		ft_sorted(t_stack *stack);
 void	ft_sort_small(t_stack *a, t_stack *b);
-int		ft_stklen(t_stack *mystack);
+void	ft_print_stack(t_stack *mystack);
 void	ft_sort_three(t_stack *a);
 void	ft_sort_five(t_stack *a, t_stack *b, int len);
 void	ft_sort_push(t_stack *a);
+int		ft_stklen(t_stack *mystack);
+int		ft_sorted(t_stack *stack);
+int		ft_rev_sorted(t_stack *stack);
+int		ft_stklen(t_stack *mystack);
 
 // helpers:
 void	ft_putstr(char const *s);
@@ -52,7 +53,7 @@ int		ft_push(t_stack *mystack, int value, int index, int batch);
 void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
 void	ss(t_stack *a, t_stack *b);
-void	push_a(t_stack *a, t_stack *b);
+void	push_a(t_stack *a, t_stack *b, int batch);
 void	push_b(t_stack *a, t_stack *b, int batch);
 void	rotate_b(t_stack *b);
 void	rotate_a(t_stack *a);

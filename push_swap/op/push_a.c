@@ -15,19 +15,17 @@ Nothing is done when there is only one or no element*/
 
 #include "../push_swap.h"
 
-void	push_a(t_stack *a, t_stack *b)
+void	push_a(t_stack *a, t_stack *b, int batch)
 {
 	t_node	*tmp;
 	int		value;
 	int		index;
-	int		batch;
 
 	tmp = *b;
 	if (*b != NULL)
 	{
 		value = tmp->v;
 		index = tmp->i;
-		batch = tmp->b;
 		ft_pop(b);
 		ft_push(a, value, index, batch);
 		ft_putstr("pa\n");

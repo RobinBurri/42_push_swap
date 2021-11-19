@@ -29,7 +29,7 @@ void	ft_sort_five(t_stack *a, t_stack *b, int len)
 	ft_sort_three(a);
 	while (tmp_len++ != len)
 	{
-		push_a(a, b);
+		push_a(a, b, 0);
 		ft_sort_push(a);
 	}
 }
