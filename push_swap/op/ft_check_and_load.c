@@ -43,7 +43,7 @@ static int	ft_index(int array[], int len, int value)
 
 	count = 0;
 	j = 0;
-	while (j < len - 1)
+	while (j < len)
 	{
 		if (value > array[j])
 			count++;
@@ -68,7 +68,6 @@ int	ft_check_and_load(int argc, char **argv, t_stack *a)
 {
 	int	i;
 	int	*array;
-	int	d;
 
 	if (argc < 2)
 		return (1);
@@ -80,7 +79,7 @@ int	ft_check_and_load(int argc, char **argv, t_stack *a)
 		return (1);
 	if (ft_has_double(array, argc - 1) != 0)
 		return (1);
-	while (i >= 1)
+	while (i > 0)
 	{
 		ft_push(a, array[i - 1], ft_index(array, argc - 1, array[i - 1]), 0);
 		i--;

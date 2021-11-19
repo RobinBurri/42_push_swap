@@ -59,6 +59,8 @@ void	rotate_a(t_stack *a);
 void	rr(t_stack *a, t_stack *b);
 void	rev_rotate_a(t_stack *a);
 void	rev_rotate_b(t_stack *b);
+int		ft_max_index(t_stack *a);
+int		ft_min_index(t_stack *a);
 int		ft_check_and_load(int argc, char **argv, t_stack *a);
 int		ft_get_last_el_index(t_stack *a);
 void	ft_sort_big(t_stack *a, t_stack *b, int len);

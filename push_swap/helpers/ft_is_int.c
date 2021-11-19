@@ -39,6 +39,7 @@ int	ft_is_int(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 		res = (res * 10) + (str[i++] - '0');
+	res = (res * sign);
 	if (res > MAX_INT || res < MIN_INT)
 		return (1);
 	return (0);

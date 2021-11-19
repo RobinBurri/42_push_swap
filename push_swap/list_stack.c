@@ -39,6 +39,9 @@ int	main(int argc, char **argv)
 	ft_print_stack(&a);
 	ft_putchar('-');
 	ft_putchar('\n');
+	ft_print_stack(&b);
+	ft_putchar('-');
+	ft_putchar('\n');
 	return (0);
 }
 
