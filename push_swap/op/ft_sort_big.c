@@ -6,11 +6,32 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 09:06:38 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/18 12:37:51 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/20 17:06:14 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+static int	ft_has_two_left(t_stack *a, t_stack *b, int *batch)
+{
+	int	len;
+
+	len = ft_stklen_batch(b, *batch);
+	if (len == 1)
+	{
+		push_a(a, b, 0);
+		return (-1);
+	}
+	else if (len == 2)
+	{
+		if ((*b)->i < (*b)->n->i)
+			swap_b(b);
+		push_a(a, b, 0);	
+		push_a(a, b, 0);	
+		return (-1);
+	} 
+	return (len);
+}
 
 void ft_find_and_send_a(t_stack *a, t_stack *b, int mid, int *batch)
 {
@@ -41,24 +62,27 @@ void ft_find_and_send_a(t_stack *a, t_stack *b, int mid, int *batch)
 void ft_find_and_send_b(t_stack *a, t_stack *b, int mid, int *batch)
 { 
     t_node  *tmp;
-    int     i;
+    int     cnt;
     int     r;
+	int		len;
 
-    i = 0;
+    cnt = 0;
     r = 0;
-    while (i < mid || r > 0)
+	len = ft_has_two_left(a, b, batch);
+	if (len < 0)
+		return ;
+    while (cnt < len || r > 0)
 	{
         tmp = *b;
-		if (tmp->i < mid && tmp->b == *batch)
+		if (tmp->i > mid && tmp->b == *batch)
         {
-            push_b(a, b, 0);
-            i++;
+            push_a(a, b, 0);
+            cnt++;
         }
-        else if (tmp->i > mid && tmp->b == *batch)
+        else if (tmp->i <= mid && tmp->b == *batch)
         {
             rotate_b(b);
             r++;
-
         }    
 		else if (tmp->b != *batch && r > 0)
         {
@@ -67,28 +91,58 @@ void ft_find_and_send_b(t_stack *a, t_stack *b, int mid, int *batch)
         }
 	}
 }
+void ft_find_and_send_b1(t_stack *a, t_stack *b, int mid, int *batch)
+{ 
+    t_node  *tmp;
+    int     cnt;
+	int		len;
+
+    cnt = 0;
+	len = 1;
+    while (cnt < len)
+	{	
+		len = ft_has_two_left(a, b, batch);
+		if (len < 0)	
+			return ;
+        tmp = *b;
+		if (tmp->i > mid)
+        {
+            push_a(a, b, 0);
+            cnt++;
+        }
+        else if (tmp->i <= mid)
+            rotate_b(b);
+	}
+}
 
 void	ft_sort_big(t_stack *a, t_stack *b, int len)
 {
 	int		mid;
     int     batch;
 
-	batch = 1;
+	batch = 0;
     while (ft_sorted(a) != 1 || len != 2)
     {
+		batch++;
 	    mid = (ft_min_index(a) + (len / 2));
         ft_find_and_send_a(a, b, mid, &batch);
         len = ft_stklen(a);
-		batch++;
     }
 	if ((*a)->i > (*a)->n->i)
 		swap_a(a);
-    while (b != NULL)
+    while (batch != 0)
     {
-        mid = (ft_min_index(a) + (len / 2));
-        ft_find_and_send_b(a, b, mid, &batch);
+		if (batch >= 2)
+		{
+			mid = ft_find_mid(b, batch);
+			ft_find_and_send_b(a, b, mid, &batch);
+			batch--;
+		}
+		else
+		{
+			mid = ft_find_mid(b, batch);
+			ft_find_and_send_b1(a, b, mid, &batch);
+			batch--;
+		}
     }
-    // if (b != NULL)
-    //     push_a(a, b, 0); 
-	
 }

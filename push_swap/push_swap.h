@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:28:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/18 13:23:18 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/20 14:55:02 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_sort_three(t_stack *a);
 void	ft_sort_five(t_stack *a, t_stack *b, int len);
 void	ft_sort_push(t_stack *a);
 int		ft_stklen(t_stack *mystack);
+int		ft_stklen_batch(t_stack *a, int batch);
 int		ft_sorted(t_stack *stack);
 int		ft_rev_sorted(t_stack *stack);
 int		ft_stklen(t_stack *mystack);
@@ -60,7 +61,7 @@ void	rotate_a(t_stack *a);
 void	rr(t_stack *a, t_stack *b);
 void	rev_rotate_a(t_stack *a);
 void	rev_rotate_b(t_stack *b);
-int		ft_max_index(t_stack *a);
+int		ft_find_mid(t_stack *a, int batch);
 int		ft_min_index(t_stack *a);
 int		ft_check_and_load(int argc, char **argv, t_stack *a);
 int		ft_get_last_el_index(t_stack *a);

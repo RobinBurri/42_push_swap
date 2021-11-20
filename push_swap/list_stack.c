@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:26:23 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/18 15:16:40 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/20 17:09:04 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ int	main(int argc, char **argv)
 	else
 		ft_sort_big(&a, &b, len);
 	ft_print_stack(&a);
-	ft_putchar('-');
-	ft_putchar('\n');
-	ft_print_stack(&b);
 	ft_putchar('-');
 	ft_putchar('\n');
 	return (0);
