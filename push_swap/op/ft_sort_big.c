@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 09:06:38 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/20 17:06:14 by rburri           ###   ########.fr       */
+/*   Updated: 2021/11/20 17:42:38 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,15 +121,18 @@ void	ft_sort_big(t_stack *a, t_stack *b, int len)
     int     batch;
 
 	batch = 0;
-    while (ft_sorted(a) != 1 || len != 2)
+    while (ft_sorted(a) != 1)
     {
 		batch++;
 	    mid = (ft_min_index(a) + (len / 2));
         ft_find_and_send_a(a, b, mid, &batch);
         len = ft_stklen(a);
+		if (len == 2)
+		{
+			if ((*a)->i > (*a)->n->i)
+				swap_a(a);
+		}
     }
-	if ((*a)->i > (*a)->n->i)
-		swap_a(a);
     while (batch != 0)
     {
 		if (batch >= 2)
