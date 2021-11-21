@@ -41,6 +41,9 @@ int		ft_rev_sorted(t_stack *stack);
 int		ft_stklen(t_stack *mystack);
 void	ft_sort_a(t_stack *a, t_stack *b, int *batch);
 void 	ft_sort_b(t_stack *a, t_stack *b, int *batch);
+int 	ft_no_batch(t_stack *b, int batch);
+int		ft_find_mid(t_stack *a, int batch);
+int		ft_has_two_left(t_stack *a, t_stack *b, int *batch);
 
 // helpers:
 void	ft_putstr(char const *s);
