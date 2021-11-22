@@ -29,6 +29,7 @@ typedef struct node {
 
 typedef t_node	*t_stack;
 
+void	ft_sort_big(t_stack *a, t_stack *b);
 void	ft_sort_small(t_stack *a, t_stack *b);
 void	ft_print_stack(t_stack *mystack);
 void	ft_sort_three(t_stack *a);
@@ -39,11 +40,13 @@ int		ft_stklen_batch(t_stack *a, int batch);
 int		ft_sorted(t_stack *stack);
 int		ft_rev_sorted(t_stack *stack);
 int		ft_stklen(t_stack *mystack);
+int 	ft_len_minus_sorted(t_stack *a);
 void	ft_sort_a(t_stack *a, t_stack *b, int *batch);
 void 	ft_sort_b(t_stack *a, t_stack *b, int *batch);
 int 	ft_no_batch(t_stack *b, int batch);
 int		ft_find_mid(t_stack *a, int batch);
 int		ft_has_two_left(t_stack *a, t_stack *b, int *batch);
+void 	ft_find_and_send_a(t_stack *a, t_stack *b, int mid, int *batch, int *i);
 
 // helpers:
 void	ft_putstr(char const *s);
@@ -53,6 +56,7 @@ int		ft_atoi(const char *str);
 int		ft_is_int(const char *str);
 int		ft_isdigit(int c);
 void	ft_swap(int *ptr1, int *ptr2);
+void	ft_print_stack(t_stack *mystack);
 // op
 void	ft_pop(t_stack *mystack);
 int		ft_push(t_stack *mystack, int value, int index, int batch);
@@ -69,6 +73,5 @@ void	rev_rotate_b(t_stack *b);
 int		ft_min_index(t_stack *a);
 int		ft_check_and_load(int argc, char **argv, t_stack *a);
 int		ft_get_last_el_index(t_stack *a);
-void	ft_sort_big(t_stack *a, t_stack *b, int len);
 
 #endif

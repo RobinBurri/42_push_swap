@@ -29,35 +29,34 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	len = ft_stklen(&a);
+	ft_print_stack(&a);
 	
 	if (len < 6)
 		ft_sort_small(&a, &b);
 	else
-		ft_sort_big(&a, &b, len);
+		ft_sort_big(&a, &b);
 	ft_print_stack(&a);
 }
 
-void	ft_print_stack(t_stack *mystack)
-{
-	t_node	*tmp;
+// void	ft_print_stack(t_stack *mystack)
+// {
+// 	t_node	*tmp;
 
-	tmp = *mystack;
-	while (tmp != NULL)
-	{
-		ft_putchar('v');
-		ft_putchar(':');
-		ft_putnbr(tmp->v);
-		ft_putchar('-');
-		ft_putchar('i');
-		ft_putchar(':');
-		ft_putnbr(tmp->i);
-		ft_putchar('-');
-		ft_putchar('b');
-		ft_putchar(':');
-		ft_putnbr(tmp->b);
-		ft_putchar('\n');
-		tmp = tmp->n;
-	}
-}
-// int len;
-// len = ft_stklen(&a);
+// 	tmp = *mystack;
+// 	while (tmp != NULL)
+// 	{
+// 		ft_putchar('v');
+// 		ft_putchar(':');
+// 		ft_putnbr(tmp->v);
+// 		ft_putchar('-');
+// 		ft_putchar('i');
+// 		ft_putchar(':');
+// 		ft_putnbr(tmp->i);
+// 		ft_putchar('-');
+// 		ft_putchar('b');
+// 		ft_putchar(':');
+// 		ft_putnbr(tmp->b);
+// 		ft_putchar('\n');
+// 		tmp = tmp->n;
+// 	}
+// }
