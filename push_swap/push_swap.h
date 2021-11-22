@@ -33,21 +33,21 @@ void	ft_sort_big(t_stack *a, t_stack *b);
 void	ft_sort_small(t_stack *a, t_stack *b);
 void	ft_print_stack(t_stack *mystack);
 void	ft_sort_three(t_stack *a);
-void	ft_sort_five(t_stack *a, t_stack *b, int len);
+void	ft_sort_four(t_stack *a, t_stack *b, int len);
 void	ft_sort_push(t_stack *a);
 int		ft_stklen(t_stack *mystack);
 int		ft_stklen_batch(t_stack *a, int batch);
 int		ft_sorted(t_stack *stack);
 int		ft_rev_sorted(t_stack *stack);
 int		ft_stklen(t_stack *mystack);
-int 	ft_len_minus_sorted(t_stack *a);
+int 	ft_len_minus_sorted(t_stack *a, int i);
 void	ft_sort_a(t_stack *a, t_stack *b, int *batch);
 void 	ft_sort_b(t_stack *a, t_stack *b, int *batch);
 int 	ft_no_batch(t_stack *b, int batch);
 int		ft_find_mid(t_stack *a, int batch);
 int		ft_has_two_left(t_stack *a, t_stack *b, int *batch);
 void 	ft_find_and_send_a(t_stack *a, t_stack *b, int mid, int *batch, int *i);
-
+int 	ft_get_before_last_el_index(t_stack *a);
 // helpers:
 void	ft_putstr(char const *s);
 void	ft_putchar(char c);

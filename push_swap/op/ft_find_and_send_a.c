@@ -24,16 +24,21 @@ static int ft_select_best(t_stack *a, t_stack *b, int mid, int *batch)
 
 static void ft_select_sec(t_stack *a, t_stack *b, int mid, int *batch)
 {
-    if (ft_get_last_el_index(a) < mid)
+    if ((*a)->n->i < mid)
+    {
+        swap_a(a);
+        push_b(a, b, *batch);
+    }
+    else if (ft_get_last_el_index(a) < mid)
     {
         rev_rotate_a(a);
         push_b(a, b, *batch);
     }
-    else if (ft_get_last_el_index(a) >= mid)
+    else if (ft_get_before_last_el_index(a) < mid)
     {
-        while ((*a)->i >= mid)
-            rotate_a(a);
-        push_b(a, b, *batch);    
+        rev_rotate_a(a);
+        rev_rotate_a(a);
+        push_b(a, b, *batch);
     }
 }
 

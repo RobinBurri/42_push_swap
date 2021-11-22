@@ -29,13 +29,13 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	len = ft_stklen(&a);
-	ft_print_stack(&a);
+	// ft_print_stack(&a);
 	
-	if (len < 6)
+	if (len < 5)
 		ft_sort_small(&a, &b);
 	else
 		ft_sort_big(&a, &b);
-	ft_print_stack(&a);
+// 	ft_print_stack(&a);
 }
 
 // void	ft_print_stack(t_stack *mystack)

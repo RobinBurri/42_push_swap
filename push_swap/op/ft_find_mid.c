@@ -15,5 +15,7 @@ int	ft_find_mid(t_stack *a, int batch)
 		cnt++;
 		tmp = tmp->n;
 	}
+	if (index == 0 && cnt != 0)
+		cnt = 0;
 	return 	(index / cnt);
 }

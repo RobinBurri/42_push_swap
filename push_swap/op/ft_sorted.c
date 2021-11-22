@@ -14,13 +14,16 @@
 
 int	ft_sorted(t_stack *stack)
 {
-	if ((*stack)->n == NULL)
+	t_node *tmp;
+
+	tmp = *stack;
+	if ((tmp) == NULL)
 		return (1);
-	while ((*stack)->n != NULL)
+	while ((tmp)->n != NULL)
 	{
-		if (((*stack)->i) > ((*stack)->n->i))
+		if (((tmp)->i) > ((tmp)->n->i))
 			return (0);
-		(*stack) = (*stack)->n;
+		(tmp) = (tmp)->n;
 	}
 	return (1);
 }

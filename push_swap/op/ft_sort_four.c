@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	ft_sort_five(t_stack *a, t_stack *b, int len)
+void	ft_sort_four(t_stack *a, t_stack *b, int len)
 {
 	t_node	*t;
 	int		tmp_len;

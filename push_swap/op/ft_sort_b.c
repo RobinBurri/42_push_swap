@@ -1,17 +1,17 @@
 #include "../push_swap.h"
 
-static int ft_select_bestb(t_stack *a, t_stack *b, int mid, int *batch, int *r)
+static int ft_select_bestb(t_stack *a, t_stack *b, int mid, int *r)
 {
     if ((*b)->n->i > (*b)->i && (*b)->i > mid)
     {
         swap_b(b);
-        push_a(a, b, *batch);
+        push_a(a, b, 0);
         return (1);
     }
     else if (*r > 0 && ft_get_last_el_index(b) > (*b)->i && (*b)->i > mid)
     {
         rev_rotate_b(b);
-        push_a(a, b, *batch);
+        push_a(a, b, 0);
         *r = *r + 1;
         return (1);
     }    
@@ -40,7 +40,7 @@ void ft_find_and_send_b(t_stack *a, t_stack *b, int *batch)
         while (1)
         {
             tmp = *b;
-            res = ft_select_bestb(a, b, mid, batch, &r);
+            res = ft_select_bestb(a, b, mid, &r);
             if (res != 1 && tmp->i <= mid && tmp->b == *batch)
             {
                 rotate_b(b);
@@ -64,7 +64,7 @@ void ft_find_and_send_b(t_stack *a, t_stack *b, int *batch)
         }
     }
 }
-static int ft_select_bestb1(t_stack *a, t_stack *b, int mid, int *batch)
+static int ft_select_bestb1(t_stack *a, t_stack *b, int mid)
 {
     t_node *tmp;
 
@@ -72,13 +72,13 @@ static int ft_select_bestb1(t_stack *a, t_stack *b, int mid, int *batch)
     if (tmp->n->i > tmp->i && tmp->i > mid)
     {
         swap_b(b);
-        push_a(a, b, *batch);
+        push_a(a, b, 0);
         return (1);
     }
     else if (ft_get_last_el_index(b) > tmp->i && tmp->i > mid)
     {
         rev_rotate_b(b);
-        push_a(a, b, *batch);
+        push_a(a, b, 0);
         return (1);
     }    
     else if (tmp->i > mid)
@@ -105,7 +105,7 @@ void ft_find_and_send_b1(t_stack *a, t_stack *b, int *batch)
         mid = ft_find_mid(b, *batch);
         while (i < (len / 2))
         {
-            res = ft_select_bestb1(a, b, mid, batch);
+            res = ft_select_bestb1(a, b, mid);
             if (res != 1 && ft_get_last_el_index(b) > mid)
             {
                 rev_rotate_b(b);
@@ -123,7 +123,7 @@ void ft_find_and_send_b1(t_stack *a, t_stack *b, int *batch)
 }
 void ft_sort_b(t_stack *a, t_stack *b, int *batch)
 {
-    while (*batch != 0)
+    while (*batch != 0 && ft_sorted(a))
     {
 		if (*batch >= 2)
 		{
@@ -137,5 +137,11 @@ void ft_sort_b(t_stack *a, t_stack *b, int *batch)
 			*batch = (*batch - 1);
 
         }
+        // ft_print_stack(a);
+        // ft_putchar('-');
+        // ft_putchar('\n');
+        // ft_print_stack(b);
+        // ft_putchar('-');
+        // ft_putchar('\n');
     }
 }

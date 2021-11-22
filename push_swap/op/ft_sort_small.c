@@ -26,6 +26,6 @@ void	ft_sort_small(t_stack *a, t_stack *b)
 	}
 	if (len == 3)
 		ft_sort_three(a);
-	if (len == 5 || len == 4)
-		ft_sort_five(a, b, len);
+	if (len == 4)
+		ft_sort_four(a, b, len);
 }
