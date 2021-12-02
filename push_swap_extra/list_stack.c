@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:26:23 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/20 17:09:04 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/02 14:14:01 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	len = ft_stklen(&a);
 	// ft_print_stack(&a);
 	
-	if (len < 5)
+	if (len < 6)
 		ft_sort_small(&a, &b);
 	else
 		ft_sort_big(&a, &b);

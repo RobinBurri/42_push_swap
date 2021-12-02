@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:28:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/20 14:55:02 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/02 13:45:38 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct node {
 
 typedef t_node	*t_stack;
 
+void    ft_first_round(t_stack *a, t_stack *b);
+int		ft_max_bat(t_stack *a);
 void	ft_sort_big(t_stack *a, t_stack *b);
 void	ft_sort_small(t_stack *a, t_stack *b);
 void	ft_print_stack(t_stack *mystack);

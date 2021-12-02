@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:29:09 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 16:44:38 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/02 13:49:51 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void	ft_sort_small(t_stack *a, t_stack *b)
 	}
 	if (len == 3)
 		ft_sort_three(a);
-	if (len == 4)
+	if (len == 4 || len == 5)
 		ft_sort_four(a, b, len);
 }

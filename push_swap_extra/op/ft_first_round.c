@@ -33,12 +33,12 @@ static void ft_can_rot(t_stack *a, t_stack *b, int low, int high)
             push_b(a, b, high);
         }
     }
-    if (((*a)->n->b == low))
+    if ((*a)->n->b == low)
     {
         rotate_a(a);
         push_b(a, b, low);
     }
-    else if (((*a)->n->b == high))
+    else if ((*a)->n->b == high)
     {
         rotate_a(a);
         push_b(a, b, high);
