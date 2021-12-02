@@ -20,20 +20,18 @@ int	main(int argc, char **argv)
 	int		ret;
 	int		len;
 
-	a = NULL;
-	b = NULL;
-	ret = ft_check_and_load(argc, argv, &a);
+	ret = ft_check_and_load(argc, argv, a);
 	if (ret != 0)
 	{
 		ft_putstr("Error\n");
 		return (1);
 	}
-	len = ft_stklen(&a);
-	ft_print_stack(&a);
+	len = ft_stklen(a);
+	ft_print_stack(a);
 	if (len < 6)
-		ft_sort_small(&a, &b);
+		ft_sort_small(a, b);
 	else
-		ft_sort_big(&a, &b);
+		ft_sort_big(a, b);
 }
 
 // void	ft_print_stack(t_stack *mystack)

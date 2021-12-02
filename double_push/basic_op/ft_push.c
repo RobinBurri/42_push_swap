@@ -19,12 +19,17 @@ int	ft_push(t_node *stack, int value, int index, int batch)
 	newnode = malloc(sizeof(t_node));
 	if (newnode == NULL)
 		return (0);
+
 	newnode->v = value;
 	newnode->i = index;
 	newnode->b = batch;
-	newnode->n = stack;
 	newnode->p = NULL;
-	stack->p = newnode;
+	if (stack != NULL){
+		stack->p = newnode;
+		newnode->n = stack;
+	} else {
+		newnode->n = NULL; 
+	}
 	stack = newnode;
 	return (1);
 }
