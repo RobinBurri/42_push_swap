@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:21:59 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 18:22:29 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/03 19:00:50 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_last_el_bat(t_node **a)
 {
-    t_node	*tmp;
+	t_node	*tmp;
 
-    tmp = *a;
-    while (tmp->n != NULL)
-        tmp = tmp->n;
-    return (tmp->b);
+	tmp = *a;
+	while (tmp->n != NULL)
+		tmp = tmp->n;
+	return (tmp->b);
 }
