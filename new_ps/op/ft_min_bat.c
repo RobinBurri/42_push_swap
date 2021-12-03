@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pop.c                                           :+:      :+:    :+:   */
+/*   ft_min_bat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 11:00:44 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 17:03:37 by rburri           ###   ########.fr       */
+/*   Created: 2021/12/03 17:38:07 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/03 17:39:26 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_pop(t_node **stack)
+int	ft_min_bat(t_node **a)
 {
 	t_node	*tmp;
+	int		min;
 
-	tmp = *stack;
-	*stack = (*stack)->n;
-	if ((*stack) != NULL)
-		(*stack)->p = NULL;
-	free(tmp);
+	tmp = *a;
+	min = 1000;
+	while (tmp != NULL)
+	{
+		if (tmp->b < min)
+			min = tmp->b;
+		tmp = tmp->n;
+	}
+	return (min);
 }

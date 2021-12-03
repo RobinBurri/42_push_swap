@@ -6,12 +6,11 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:41:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 14:36:20 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/03 17:26:15 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -28,9 +27,9 @@ int	main(int argc, char **argv)
 	}
 	len = ft_stklen(a);
 	ft_print_stack(a);
-	// if (len < 6)
-	// 	ft_sort_small(&a, &b);
-	// else
-	// 	ft_sort_big(&a, &b);
-	// ft_print_stack(a);
+	if (len < 6)
+		ft_sort_small(&a, &b);
+	else
+		ft_sort_big(&a, &b);
+	ft_print_stack(a);
 }

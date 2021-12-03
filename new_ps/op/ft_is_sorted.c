@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pop.c                                           :+:      :+:    :+:   */
+/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 11:00:44 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 17:03:37 by rburri           ###   ########.fr       */
+/*   Created: 2021/12/03 16:23:43 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/03 16:34:31 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_pop(t_node **stack)
+int	ft_is_sorted(t_node **stack)
 {
 	t_node	*tmp;
 
 	tmp = *stack;
-	*stack = (*stack)->n;
-	if ((*stack) != NULL)
-		(*stack)->p = NULL;
-	free(tmp);
+	if ((tmp) == NULL)
+		return (1);
+	while ((tmp)->n != NULL)
+	{
+		if (((tmp)->i) > ((tmp)->n->i))
+			return (0);
+		(tmp) = (tmp)->n;
+	}
+	return (1);
 }

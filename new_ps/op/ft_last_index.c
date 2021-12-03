@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pop.c                                           :+:      :+:    :+:   */
+/*   ft_last_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 11:00:44 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 17:03:37 by rburri           ###   ########.fr       */
+/*   Created: 2021/12/03 16:26:35 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/03 16:35:12 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_pop(t_node **stack)
+int	ft_last_index(t_node **a)
 {
 	t_node	*tmp;
 
-	tmp = *stack;
-	*stack = (*stack)->n;
-	if ((*stack) != NULL)
-		(*stack)->p = NULL;
-	free(tmp);
+	tmp = *a;
+	while (tmp->n != NULL)
+		tmp = tmp->n;
+	return (tmp->i);
 }

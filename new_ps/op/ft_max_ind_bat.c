@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pop.c                                           :+:      :+:    :+:   */
+/*   ft_max_ind_bat.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 11:00:44 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 17:03:37 by rburri           ###   ########.fr       */
+/*   Created: 2021/12/03 17:44:15 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/03 17:44:38 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_pop(t_node **stack)
+int	ft_max_ind_bat(t_node **a, int batch)
 {
 	t_node	*tmp;
+	int		max;
 
-	tmp = *stack;
-	*stack = (*stack)->n;
-	if ((*stack) != NULL)
-		(*stack)->p = NULL;
-	free(tmp);
+	tmp = *a;
+	max = 0;
+	while (tmp != NULL)
+	{
+		if (tmp->b == batch && (tmp->i) > max)
+			max = tmp->i;
+		tmp = tmp->n;
+	}
+	return (max);
 }

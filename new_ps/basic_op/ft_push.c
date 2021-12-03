@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 10:59:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 14:16:49 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/03 16:37:00 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int	ft_push(t_node **stack, int value, int index, int batch)
 	nn = malloc(sizeof(t_node));
 	if (nn == NULL)
 		return (0);
-
 	nn->v = value;
 	nn->i = index;
 	nn->b = batch;
 	nn->p = NULL;
-	if (*stack != NULL){
+	if (*stack != NULL)
+	{
 		(*stack)->p = nn;
 		nn->n = *stack;
-	} else {
-		nn->n = NULL; 
 	}
+	else
+		nn->n = NULL;
 	*stack = nn;
 	return (1);
 }
