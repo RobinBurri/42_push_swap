@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:39:16 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 18:53:22 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/04 17:18:13 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,27 @@ void	rrr(t_node **a, t_node **b);
 void	ss(t_node **a, t_node **b);
 void	swap_a(t_node **stack);
 void	swap_b(t_node **stack);
-// op
+// OP
 int		ft_check_and_load(int argc, char **argv, t_node **a);
-void	ft_sort_small(t_node **a, t_node **b);
-void	ft_sort_ff(t_node **a, t_node **b, int len);
-void	ft_sort_three(t_node **a);
-void	ft_sort_push(t_node **a);
-int		ft_is_sorted(t_node **stack);
 int		ft_last_index(t_node **a);
-void	ft_sort_big(t_node **a, t_node **b);
 int		ft_min_bat(t_node **a);
 int		ft_max_bat(t_node **a);
 int		ft_max_ind_bat(t_node **a, int batch);
 int		ft_min_ind_bat(t_node **a, int batch);
 int		ft_rev_sorted(t_node **stack);
 int		ft_last_el_bat(t_node **a);
-int		ft_before_last_el(t_node **a);
 int		ft_has_two_left(t_node **a, t_node **b, int batch);
+int		ft_before_last_index(t_node **a);
+int		ft_before_last_bat(t_node **a);
+int		ft_find_mid(t_node **a, int batch);
+// sorting
+void    ft_big_start(t_node **a, t_node **b);
+void	ft_sort_big(t_node **a, t_node **b);
+void	ft_sort_small(t_node **a, t_node **b);
+void	ft_sort_ff(t_node **a, t_node **b, int len);
+void	ft_sort_three(t_node **a);
+void	ft_sort_push(t_node **a);
+int		ft_is_sorted(t_node **stack);
 //a
 void	ft_find_and_send_a(t_node **a, t_node **b);
 //b

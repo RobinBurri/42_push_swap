@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 17:10:29 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 17:24:47 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/04 17:10:20 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ void	ft_chose_small(t_node **a, t_node **b, t_node *t)
 		swap_a(a);
 		push_b(a, b, 0);
 	}
-	else if (ft_last_index(a) < 2)
+	else if (ft_last_index(a) < 2 || ft_before_last_index(a) < 2)
 	{
+		if (ft_before_last_index(a) < 2 && ft_last_index(a) >= 2)
+			rev_rotate_a(a);
 		rev_rotate_a(a);
 		push_b(a, b, 0);
 	}

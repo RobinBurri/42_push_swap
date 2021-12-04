@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 17:45:58 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 18:25:24 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/04 17:09:31 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	ft_select_sec(t_node **a, t_node **b, int mid, int batch)
 		rev_rotate_a(a);
 		push_b(a, b, batch);
 	}
-	else if (ft_before_last_el(a) < mid)
+	else if (ft_before_last_index(a) < mid)
 	{
 		rev_rotate_a(a);
 		rev_rotate_a(a);
@@ -77,7 +77,7 @@ void	ft_find_and_send_a(t_node **a, t_node **b)
 	int	batch;
 
 	batch = ft_min_bat(a);
-	mid = (ft_max_ind_bat(a, batch) + 1);
+	mid = (ft_find_mid(a, batch) + 1);
 	b_len = ft_stklen(*b);
 	while (b_len < mid && ft_is_sorted(a) != 1)
 	{

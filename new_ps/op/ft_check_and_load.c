@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 14:26:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 14:26:20 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/04 17:00:48 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,10 @@ int	ft_check_and_load(int argc, char **argv, t_node **a)
 	while (i > 0)
 	{
 		index = ft_index(array, argc - 1, array[i - 1]);
-		ft_push(a, array[i - 1], index, (index / 20));
+		if (argc > 60)
+			ft_push(a, array[i - 1], index, (index / 20));
+		else
+			ft_push(a, array[i - 1], index, 0);
 		i--;
 	}
 	free(array);
