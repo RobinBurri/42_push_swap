@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_node	*a;
-	t_node	*b;
+	t_node	*a = NULL;
+	t_node	*b = NULL;
 	int		ret;
 	int		len;
 

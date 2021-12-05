@@ -14,71 +14,42 @@
 
 static void	ft_can_push(t_node **a, t_node **b, int low, int high)
 {
-    int b_len;
     if ((*a)->b == low || (*a)->b == high)
-        push_b(a, b, low);
-	else if ((*a)->n->b == low || (*a)->n->b == high)
-	{
-		swap_a(a);
-		push_b(a, b, low);
-	}
+        push_b(a, b, (*a)->b);
 	else
-		rotate_a(a);
-    b_len = ft_stklen(*b);
-    if (b_len > 1)
     {
-        if (((*b)->b > (*b)->n->b) && ((*a)->b != low && (*a)->b != high))
-			rr(a, b);
-		else if ((*b)->b > (*b)->n->b)
-            rotate_b(b);
+		rotate_a(a);
+        if ((*a)->b == low || (*a)->b == high)
+            push_b(a, b, (*a)->b);
     }
 }
 
 static void ft_can_rot(t_node **a, t_node **b, int low, int high)
 {
-    int b_len;
- 
-    b_len = ft_stklen(*b);
-    if (b_len > 1)
+    if ((*b)->b < (*b)->n->b)
     {
-        if (((*b)->b > (*b)->n->b) && ((*a)->n->b == low))
-        {
+        if ((*a)->b != high || (*a)->b != low)
             rr(a, b);
-            push_b(a, b, low);
-        }
-        else if (((*b)->b > (*b)->n->b) && ((*a)->n->b == high))
-        {
-            rr(a, b);
-            push_b(a, b, high);
-        }
-    }
-    if ((*a)->n->b == low)
-    {
-        rotate_a(a);
-        push_b(a, b, low);
-    }
-    else if ((*a)->n->b == high)
-    {
-        rotate_a(a);
-        push_b(a, b, high);
+        else
+            rotate_b(b);
     }
 }
 
-static void ft_calc_hl(t_node **a, int *high, int *low)
-{
-    int max;
-    max = ft_max_bat(a);
-    if ((max / 2) % 2 == 0)
-    {
-        *high = max / 2;
-        *low = *high - 1;
-    }
-    else
-    {
-        *low = max / 2;
-        *high = *low + 1;
-    }
-}
+// static void ft_calc_hl(t_node **a, int *high, int *low)
+// {
+//     int max;
+//     max = ft_max_bat(a);
+//     if ((max / 2) % 2 == 0)
+//     {
+//         *high = max / 2;
+//         *low = *high - 1;
+//     }
+//     else
+//     {
+//         *low = max / 2;
+//         *high = *low + 1;
+//     }
+// }
 
 void    ft_big_start(t_node **a, t_node **b)
 {
@@ -86,17 +57,20 @@ void    ft_big_start(t_node **a, t_node **b)
     int low;
     int max;
     max = ft_max_bat(a);
-    ft_calc_hl(a, &high, &low);
+    high = max / 2;
+    low = high - 1;
+    // ft_calc_hl(a, &high, &low);
 
-	while (low >= 0 || high <= max)
+	while (ft_has_bat_left(*a, high)|| ft_has_bat_left(*a, low))
     {
-        while ((ft_last_el_bat(a) == high || ft_last_el_bat(a) == low)
-			|| (ft_before_last_bat(a) == high || ft_before_last_bat(a) == low))
-		{
-            rev_rotate_a(a);		
-		}
+        // while ((ft_last_el_bat(a) == high || ft_last_el_bat(a) == low)
+		// 	|| (ft_before_last_bat(a) == high || ft_before_last_bat(a) == low))
+		// {
+        //     rev_rotate_a(a);		
+		// }
+        ft_print_stack(*b);
+        if (ft_stklen(*b) > 1)
+            ft_can_rot(a, b, low, high);
         ft_can_push(a, b, low, high);
-        ft_can_rot(a, b, low, high);
     }
-
 }

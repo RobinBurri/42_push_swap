@@ -65,6 +65,7 @@ int		ft_has_two_left(t_node **a, t_node **b, int batch);
 int		ft_before_last_index(t_node **a);
 int		ft_before_last_bat(t_node **a);
 int		ft_find_mid(t_node **a, int batch);
+int		ft_has_bat_left(t_node *stack, int batch);
 // sorting
 void    ft_big_start(t_node **a, t_node **b);
 void	ft_sort_big(t_node **a, t_node **b);

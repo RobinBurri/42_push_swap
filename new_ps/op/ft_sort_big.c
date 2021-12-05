@@ -19,6 +19,7 @@ void	ft_sort_big(t_node **a, t_node **b)
 	while (ft_is_sorted(a) != 1)
 	{
 		ft_find_and_send_a(a, b);
+		ft_print_stack(*a);
 		if (ft_rev_sorted(b) != 1)
 			ft_sort_b(a, b);
 	}
