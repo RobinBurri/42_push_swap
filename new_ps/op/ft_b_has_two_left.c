@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	ft_has_two_left(t_node **a, t_node **b, int batch)
+int	ft_b_has_two_left(t_node **a, t_node **b, int batch)
 {
 	int	len;
 

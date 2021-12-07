@@ -46,7 +46,7 @@ void	ft_find_and_send_b(t_node **a, t_node **b, int batch)
 	r = 0;
 	while (1)
 	{
-		len = ft_has_two_left(a, b, batch);
+		len = ft_b_has_two_left(a, b, batch);
 		if (len < 0)
 			return ;
 		mid = ft_min_ind_bat(b, batch);
@@ -70,7 +70,7 @@ void	ft_find_and_send_b(t_node **a, t_node **b, int batch)
 			}
 			else if (r == 0)
 			{
-				len = ft_has_two_left(a, b, batch);
+				len = ft_b_has_two_left(a, b, batch);
 				if (len < 0)
 					return ;
 			}
@@ -113,7 +113,7 @@ void	ft_find_and_send_b1(t_node **a, t_node **b, int batch)
     while (ft_rev_sorted(b) != 1)
     {
 		i = 0;
-		len = ft_has_two_left(a, b, batch);
+		len = ft_b_has_two_left(a, b, batch);
 		if (len < 0)
 			return ;
 		mid = ft_min_ind_bat(b, batch);
@@ -140,10 +140,11 @@ void	ft_sort_b(t_node **a, t_node **b)
 {
     int bat;
 	ft_print_stack(*a);
-    bat = ft_min_bat(b);
-	ft_print_stack(*b);
+    bat = ft_max_bat(b);
+	
     while (ft_rev_sorted(b) != 1)
     {
+		ft_print_stack(*a);
 		if (bat > 0)
 			ft_find_and_send_b(a, b, bat);
 		else if (bat == 0)

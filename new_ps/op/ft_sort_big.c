@@ -14,16 +14,15 @@
 
 void	ft_sort_big(t_node **a, t_node **b)
 {
-	// if (ft_is_sorted(a) != 1 && ft_stklen(*a) > 59)
-	// {
-	// 	ft_big_start(a, b);
-	// 	ft_sort_b1(a, b);
-	// }
-	while (ft_is_sorted(a) != 1)
+	int len;
+
+	len = ft_stklen(*a);
+	if (ft_is_sorted(a) != 1 && len > 59)
+		ft_big_start(a, b);
+	while (ft_stklen(*a) != len || ft_is_sorted(a) != 1 || ft_rev_sorted(b) != 1)
 	{
+		ft_sort_b(a, b);
 		ft_find_and_send_a(a, b);
-		if (ft_rev_sorted(b) != 1)
-			ft_sort_b(a, b);
 	}
 	while ((*b) != NULL)
 		push_a(a, b, 0);
