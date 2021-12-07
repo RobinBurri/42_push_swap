@@ -74,6 +74,7 @@ void	push_b(t_stack *a, t_stack *b, int batch);
 void	rotate_b(t_stack *b);
 void	rotate_a(t_stack *a);
 void	rr(t_stack *a, t_stack *b);
+void	rrr(t_node **a, t_node **b);
 void	rev_rotate_a(t_stack *a);
 void	rev_rotate_b(t_stack *b);
 int		ft_min_index(t_stack *a);

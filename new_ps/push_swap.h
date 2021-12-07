@@ -75,6 +75,7 @@ void	ft_sort_ff(t_node **a, t_node **b, int len);
 void	ft_sort_three(t_node **a);
 void	ft_sort_push(t_node **a);
 int		ft_is_sorted(t_node **stack);
+void	ft_sort_b1(t_node **a, t_node **b);
 //a
 void	ft_find_and_send_a(t_node **a, t_node **b);
 //b

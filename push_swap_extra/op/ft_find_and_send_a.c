@@ -48,12 +48,16 @@ static void ft_select_sec(t_stack *a, t_stack *b, int mid, int batch)
     }
 }
 
-static void ft_arrange_b(t_stack *b)
+static void ft_arrange_b(t_stack *a, t_stack *b)
 {
-    if (((*b)->n->b == (*b)->b) && ((*b)->n->i > (*b)->i))
-        swap_b(b);
-    else if ((ft_get_last_el_index(b) > (*b)->i) && (ft_last_el_bat(b) == (*b)->i))
-        rev_rotate_b(b);
+	if (((*b)->n->i > (*b)->i) && ((*a)->n->i < (*a)->i))
+		ss(a, b);
+	else if ((ft_get_last_el_index(b) > (*b)->i) && (ft_get_last_el_index(a) < (*a)->i))
+		rrr(a, b);
+	else if (((*b)->n->b == (*b)->b) && ((*b)->n->i > (*b)->i))
+		swap_b(b);
+	else if ((ft_get_last_el_index(b) > (*b)->i))
+		rev_rotate_b(b);
 }
 
 void ft_find_and_send_a(t_stack *a, t_stack *b, int mid, int batch, int *i)
@@ -62,12 +66,13 @@ void ft_find_and_send_a(t_stack *a, t_stack *b, int mid, int batch, int *i)
 
     while (*i < mid && ft_sorted(a) != 1)
 	{
+        if ((*b) != NULL && (*b)->n != NULL)
+            ft_arrange_b(a, b);
         res = 0;
         res = ft_select_best(a, b, mid, batch);
         if (res == 0)
             ft_select_sec(a, b, mid, batch);
-        if ((*b) != NULL && (*b)->n != NULL)
-            ft_arrange_b(b);
+        
         // ft_print_stack(a);
         // ft_putchar('-');
         // ft_putchar('\n');

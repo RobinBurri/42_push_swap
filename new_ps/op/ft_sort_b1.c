@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_sort_b.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 18:27:15 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 19:12:02 by rburri           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../push_swap.h"
 
 static int	ft_select_bestb(t_node **a, t_node **b, int mid, int *r, int batch)
@@ -35,7 +23,7 @@ static int	ft_select_bestb(t_node **a, t_node **b, int mid, int *r, int batch)
 	return (0);
 }
 
-void	ft_find_and_send_b(t_node **a, t_node **b, int batch)
+static void	ft_find_and_send_b(t_node **a, t_node **b, int batch)
 {
 	t_node	*tmp;
 	int		r;
@@ -103,7 +91,7 @@ static int	ft_select_bestb1(t_node **a, t_node **b, int mid, int batch)
 	return (0);
 }
 
-void	ft_find_and_send_b1(t_node **a, t_node **b, int batch)
+static void	ft_find_and_send_b1(t_node **a, t_node **b, int batch)
 { 
 	int	len;
 	int	mid;
@@ -136,14 +124,15 @@ void	ft_find_and_send_b1(t_node **a, t_node **b, int batch)
     }
 }
 
-void	ft_sort_b(t_node **a, t_node **b)
+void	ft_sort_b1(t_node **a, t_node **b)
 {
     int bat;
 	ft_print_stack(*a);
-    bat = ft_min_bat(b);
+    bat = ft_max_bat(b);
 	ft_print_stack(*b);
-    while (ft_rev_sorted(b) != 1)
+    while (ft_has_bat_left(*b, bat) != 0)
     {
+        bat = ft_max_bat(b);
 		if (bat > 0)
 			ft_find_and_send_b(a, b, bat);
 		else if (bat == 0)
