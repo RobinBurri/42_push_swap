@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:54:01 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/02 17:24:03 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:05:21 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	push_a(t_node *a, t_node *b, int batch)
 		value = tmp->v;
 		index = tmp->i;
 		ft_pop(b);
-		ft_push(a, value, index, batch);
+		ft_push(&a, value, index, batch);
 		ft_putstr("pa\n");
 	}
 }

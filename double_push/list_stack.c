@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:46:34 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/02 18:00:29 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:30:53 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	int		ret;
 	int		len;
 
-	ret = ft_check_and_load(argc, argv, a);
+	ret = ft_check_and_load(argc, argv, &a);
 	if (ret != 0)
 	{
 		ft_putstr("Error\n");
@@ -29,9 +29,10 @@ int	main(int argc, char **argv)
 	len = ft_stklen(a);
 	ft_print_stack(a);
 	if (len < 6)
-		ft_sort_small(a, b);
+		ft_sort_small(&a, &b);
 	else
-		ft_sort_big(a, b);
+		ft_sort_big(&a, &b);
+	ft_print_stack(a);
 }
 
 // void	ft_print_stack(t_stack *mystack)

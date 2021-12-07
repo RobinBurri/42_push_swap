@@ -6,12 +6,11 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:50:50 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 16:47:04 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/03 15:33:07 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 void	ft_sort_three(t_stack *a)
 {

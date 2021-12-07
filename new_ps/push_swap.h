@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:39:16 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/04 17:18:13 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/06 08:53:39 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int		ft_before_last_index(t_node **a);
 int		ft_before_last_bat(t_node **a);
 int		ft_find_mid(t_node **a, int batch);
 int		ft_has_bat_left(t_node *stack, int batch);
+int		ft_has_two_bat(t_node *stack);
 // sorting
 void    ft_big_start(t_node **a, t_node **b);
 void	ft_sort_big(t_node **a, t_node **b);

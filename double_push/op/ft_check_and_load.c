@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:41:02 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/02 17:59:28 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:05:59 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static int	ft_load_array(int *array, char **argv, int len)
 	return (0);
 }
 
-int	ft_check_and_load(int argc, char **argv, t_node *a)
+int	ft_check_and_load(int argc, char **argv, t_node **a)
 {
 	int	i;
 	int	*array;

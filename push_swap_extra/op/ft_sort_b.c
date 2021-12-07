@@ -134,11 +134,5 @@ void ft_sort_b(t_stack *a, t_stack *b)
 			ft_find_and_send_b(a, b, bat);
 		else if (bat == 0)
 			ft_find_and_send_b1(a, b, bat);
-        // ft_print_stack(a);
-        // ft_putchar('-');
-        // ft_putchar('\n');
-        // ft_print_stack(b);
-        // ft_putchar('-');
-        // ft_putchar('\n');
     }
 }

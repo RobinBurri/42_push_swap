@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:52:35 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/02 17:27:16 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/03 13:36:03 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@ Nothing is done if there is one or zero el*/
 
 #include "../push_swap.h"
 
-void	swap_a(t_node *stack)
+void	swap_a(t_node **stack)
 {
 	t_node	*tmp;
 
-	tmp = stack;
+	tmp =  *stack;
 	if (tmp && tmp->n)
 	{
 		ft_swap(&tmp->v, &tmp->n->v);

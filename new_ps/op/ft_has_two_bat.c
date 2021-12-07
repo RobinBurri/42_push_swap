@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_small.c                                    :+:      :+:    :+:   */
+/*   ft_has_two_bat.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 12:29:09 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 13:35:37 by rburri           ###   ########.fr       */
+/*   Created: 2021/12/06 08:49:13 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/06 08:53:12 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sort_small(t_node **a, t_node **b)
+int	ft_has_two_bat(t_node *stack)
 {
-	int	len;
+	t_node	*tmp;
+	int		bat;
 
-	len = ft_stklen(*a);
-	if (ft_sorted(*a) || len == 1)
-		return ;
-	if (len == 2)
+	tmp = stack;
+	bat = tmp->b;
+	while (tmp->n != NULL)
 	{
-		swap_a(*a);
-		return ;
+		if (tmp->b != bat)
+			return (1);
+		tmp = tmp->n;
 	}
-	if (len == 3)
-		ft_sort_three(*a);
-	if (len == 4 || len == 5)
-		ft_sort_four(*a, *b, len);
+	return (0);
 }
