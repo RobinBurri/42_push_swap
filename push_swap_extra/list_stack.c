@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	len = ft_stklen(&a);
-	// ft_print_stack(&a);
+	ft_print_stack(&a);
 	
 	if (len < 6)
 		ft_sort_small(&a, &b);

@@ -83,7 +83,7 @@ int	ft_check_and_load(int argc, char **argv, t_stack *a)
 	while (i > 0)
 	{
 		index = ft_index(array, argc - 1, array[i - 1]);
-		ft_push(a, array[i - 1], index , (index / 20));
+		ft_push(a, array[i - 1], index , (index / 12));
 		i--;
 	}
 	free(array);

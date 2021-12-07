@@ -80,5 +80,9 @@ void	rev_rotate_b(t_stack *b);
 int		ft_min_index(t_stack *a);
 int		ft_check_and_load(int argc, char **argv, t_stack *a);
 int		ft_get_last_el_index(t_stack *a);
+int		ft_last_index(t_node **a);
+int	ft_has_bat_left(t_node *stack, int batch);
+int		ft_is_sorted(t_node **stack);
+int	ft_has_two_bat(t_node *stack);
 
 #endif

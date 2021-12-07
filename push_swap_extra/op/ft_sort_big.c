@@ -14,8 +14,8 @@
 
 void	ft_sort_big(t_stack *a, t_stack *b)
 {
-    // if (ft_sorted(a) != 1)
-    //     ft_first_round(a, b);
+    if (ft_sorted(a) != 1)
+        ft_first_round(a, b);
     while (ft_sorted(a) != 1)
     {
 		ft_sort_a(a, b);

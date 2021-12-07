@@ -2,64 +2,49 @@
 
 static void ft_can_push(t_stack *a, t_stack *b, int low, int high)
 {
-    int b_len;
-    if ((*a)->b == low)
-            push_b(a, b, low);
-        else if ((*a)->b == high)
-            push_b(a, b, high);
-    b_len = ft_stklen(b);
-    if (b_len > 1)
+     if ((*a)->b == low || (*a)->b == high)
+        push_b(a, b, (*a)->b);
+	else
     {
-        if ((*b)->b > (*b)->n->b)
-            rotate_b(b);
+		rotate_a(a);
+        if ((*a)->b == low || (*a)->b == high)
+            push_b(a, b, (*a)->b);
     }
 }
 
 static void ft_can_rot(t_stack *a, t_stack *b, int low, int high)
 {
-    int b_len;
- 
-    b_len = ft_stklen(b);
-    if (b_len > 1)
+    if ((*b)->b < (*b)->n->b)
     {
-        if (((*b)->b > (*b)->n->b) && ((*a)->n->b == low))
-        {
+        if ((*a)->b != high || (*a)->b != low)
             rr(a, b);
-            push_b(a, b, low);
-        }
-        else if (((*b)->b > (*b)->n->b) && ((*a)->n->b == high))
-        {
-            rr(a, b);
-            push_b(a, b, high);
-        }
-    }
-    if ((*a)->n->b == low)
-    {
-        rotate_a(a);
-        push_b(a, b, low);
-    }
-    else if ((*a)->n->b == high)
-    {
-        rotate_a(a);
-        push_b(a, b, high);
+        else
+            rotate_b(b);
     }
 }
 
-static void ft_calc_hl(t_stack *a, int *high, int *low)
+static void ft_swap_best(t_stack *a, t_stack *b)
 {
-    int max;
-    max = ft_max_bat(a);
-    if ((max / 2) % 2 == 0)
+    if ((*a)->i < (*a)->n->i && (*b)->i > (*b)->n->i)
+        ss(a, b);
+    else if ((*b)->i > (*b)->n->i)
+        swap_b(b);
+    else if ((*a)->i < (*a)->n->i)
+        swap_a(a);
+}
+
+static void ft_find_bigger_to_push(t_stack *a, t_stack *b)
+{
+    if ((*a)->i > (*a)->n->i && (*a)->i > ft_last_index(a))
+        push_b(a, b, (*a)->b);
+    if (ft_last_index(a) > (*a)->i && ft_last_index(a) > (*a)->n->i)
     {
-        *high = max / 2;
-        *low = *high - 1;
-    }
-    else
-    {
-        *low = max / 2;
-        *high = *low + 1;
+        rev_rotate_a(a);
+        push_b(a, b, (*a)->b);
     }
 }
+
+
 
 void    ft_first_round(t_stack *a, t_stack *b)
 {
@@ -67,16 +52,35 @@ void    ft_first_round(t_stack *a, t_stack *b)
     int low;
     int max;
     max = ft_max_bat(a);
-    ft_calc_hl(a, &high, &low);
-
-    while (low >= 0 || high <= max)
+    high = max / 2;
+    low = high - 1;
+    while (ft_is_sorted(a) != 1 && ft_stklen(a) > 2)
     {
-        while (ft_last_el_bat(a) == high || ft_last_el_bat(a) == low)
-            rev_rotate_a(a);
-        ft_can_push(a, b, low, high);
-        ft_can_rot(a, b, low, high);
+        while (ft_has_two_bat(*a) == 1
+			&& (ft_has_bat_left(*a, high)|| ft_has_bat_left(*a, low)))
+        {
+        // while ((ft_last_el_bat(a) == high || ft_last_el_bat(a) == low)
+		// 	|| (ft_before_last_bat(a) == high || ft_before_last_bat(a) == low))
+		// {
+        //     rev_rotate_a(a);		
+		// }
+        	// ft_print_stack(*b);
+        	if (ft_stklen(b) > 1)
+            {
+            	ft_can_rot(a, b, low, high);
+                ft_swap_best(a, b);
+            }
+        	ft_can_push(a, b, low, high);
+        }
+        high++;
+        low--;
+        while (ft_has_two_bat(*a) == 0 && ft_is_sorted(a) != 1 && ft_stklen(a) > 2)
+        {
+            // ft_print_stack(*b);
+            ft_find_bigger_to_push(a, b);
+            ft_swap_best(a, b);
+        }
     }
- 
 
 
 }
