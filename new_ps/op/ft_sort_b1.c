@@ -127,9 +127,7 @@ static void	ft_find_and_send_b1(t_node **a, t_node **b, int batch)
 void	ft_sort_b1(t_node **a, t_node **b)
 {
     int bat;
-	ft_print_stack(*a);
     bat = ft_max_bat(b);
-	ft_print_stack(*b);
     while (ft_has_bat_left(*b, bat) != 0)
     {
         bat = ft_max_bat(b);

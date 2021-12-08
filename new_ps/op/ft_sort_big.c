@@ -17,13 +17,16 @@ void	ft_sort_big(t_node **a, t_node **b)
 	int len;
 
 	len = ft_stklen(*a);
-	if (ft_is_sorted(a) != 1 && len > 59)
-		ft_big_start(a, b);
-	while (ft_stklen(*a) != len || ft_is_sorted(a) != 1 || ft_rev_sorted(b) != 1)
+	if (ft_is_sorted(a) != - 1)
 	{
-		ft_sort_b(a, b);
-		ft_find_and_send_a(a, b);
+		ft_big_start(a, b);
+		while (ft_stklen(*a) != len)
+		{
+			ft_sort_b(a, b);
+			while (ft_is_sorted(a) != 1)
+				ft_big_follow(a, b);
+		}
+		while ((*b) != NULL)
+			push_a(a, b, 0);
 	}
-	while ((*b) != NULL)
-		push_a(a, b, 0);
 }

@@ -1,5 +1,15 @@
 #include "../push_swap.h"
 
+static void	ft_arrange_b(t_node **a, t_node **b)
+{
+	if (((*b)->n->i > (*b)->i) && ((*a)->n->i < (*a)->i))
+		ss(a, b);
+	else if ((*b)->n->i > (*b)->i)
+		swap_b(b);
+	else if ((*a)->n->i < (*a)->i)
+		swap_a(a);
+}
+
 int	ft_a_has_two_left(t_node **a, t_node **b)
 {
 	int	len;
@@ -15,6 +25,7 @@ int	ft_a_has_two_left(t_node **a, t_node **b)
 		if ((*a)->i < (*a)->n->i)
 			swap_a(b);
 		push_b(a, b, (*a)->b);
+		ft_arrange_b(a , b);
 		push_b(a, b, (*a)->b);
 		return (-1);
 	}
