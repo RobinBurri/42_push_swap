@@ -83,10 +83,7 @@ int	ft_check_and_load(int argc, char **argv, t_node **a)
 	while (i > 0)
 	{
 		index = ft_index(array, argc - 1, array[i - 1]);
-		if (argc > 5)
-			ft_push(a, array[i - 1], index, (index / 9));
-		else
-			ft_push(a, array[i - 1], index, 0);
+		ft_push(a, array[i - 1], index, (index / 9));
 		i--;
 	}
 	free(array);
