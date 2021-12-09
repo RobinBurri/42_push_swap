@@ -6,7 +6,7 @@
 #    By: rburri <rburri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 12:26:57 by rburri            #+#    #+#              #
-#    Updated: 2021/12/09 17:10:55 by rburri           ###   ########.fr        #
+#    Updated: 2021/12/09 18:47:19 by rburri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 FLAGS = -Wall -Wextra -Werror
 
-CC = gcc -g
+CC = gcc
 
 SRCS	= \
 		helpers/ft_atoi.c		helpers/ft_is_int.c		helpers/ft_swap.c \
@@ -33,7 +33,9 @@ SRCS	= \
 		op/ft_big_follow.c 		op/ft_big_start.c 			op/ft_sort_big.c \
 		op/ft_sort_small.c 		op/ft_sort_three.c 			op/ft_sort_ff.c \
 		op/ft_sort_push.c 		op/ft_find_and_send_a.c 	op/ft_is_sorted.c \
-		op/ft_has_bat_left.c	op/ft_has_double.c							main.c
+		op/ft_has_bat_left.c	op/ft_has_double.c	\
+		op/ft_check_and_load2.c	\
+		main.c
 
 OBJS = $(SRCS:%.c=%.o)
 

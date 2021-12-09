@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:39:16 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/09 16:34:22 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/09 18:09:57 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	swap_a(t_node **stack);
 void	swap_b(t_node **stack);
 // OP
 int		ft_check_and_load(char **argv, t_node **a);
+int		ft_check_and_load2(int argc, char **argv, t_node **a);
 int		ft_last_index(t_node **a);
 int		ft_min_bat(t_node **a);
 int		ft_max_bat(t_node **a);
