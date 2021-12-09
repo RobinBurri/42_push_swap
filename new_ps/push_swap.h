@@ -57,19 +57,19 @@ int		ft_check_and_load(int argc, char **argv, t_node **a);
 int		ft_last_index(t_node **a);
 int		ft_min_bat(t_node **a);
 int		ft_max_bat(t_node **a);
-int		ft_max_ind_bat(t_node **a, int batch);
+// int		ft_max_ind_bat(t_node **a, int batch);
 int		ft_min_ind_bat(t_node **a, int batch);
 int		ft_rev_sorted(t_node **stack);
 int		ft_last_el_bat(t_node **a);
 int		ft_b_has_two_left(t_node **a, t_node **b, int batch);
+int		ft_a_has_two_left(t_node **a, t_node **b);
 int		ft_before_last_index(t_node **a);
-int		ft_before_last_bat(t_node **a);
+// int		ft_before_last_bat(t_node **a);
 int		ft_find_mid(t_node **a, int batch);
 int		ft_has_bat_left(t_node *stack, int batch);
-int		ft_has_two_bat(t_node *stack);
-int		ft_a_has_two_left(t_node **a, t_node **b);
-void	ft_big_follow(t_node **a, t_node **b);
+// int		ft_has_two_bat(t_node *stack);
 // sorting
+void	ft_big_follow(t_node **a, t_node **b);
 void    ft_big_start(t_node **a, t_node **b);
 void	ft_sort_big(t_node **a, t_node **b);
 void	ft_sort_small(t_node **a, t_node **b);
@@ -77,8 +77,6 @@ void	ft_sort_ff(t_node **a, t_node **b, int len);
 void	ft_sort_three(t_node **a);
 void	ft_sort_push(t_node **a);
 int		ft_is_sorted(t_node **stack);
-//a
 void	ft_find_and_send_a(t_node **a, t_node **b);
-//b
 void	ft_sort_b(t_node **a, t_node **b);
 #endif
