@@ -6,14 +6,11 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 19:28:00 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 17:00:16 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/09 12:47:18 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-#define MAX_INT 2147483647
-#define MIN_INT -2147483648
 
 int	ft_is_int(const char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:43:53 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 18:44:23 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/09 12:48:14 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_min_ind_bat(t_node **a, int batch)
 	int		min;
 
 	tmp = *a;
-	min = INT_MAX;
+	min = MAX_INT;
 	while (tmp != NULL)
 	{
 		if (tmp->b == batch && (tmp->i) < min)

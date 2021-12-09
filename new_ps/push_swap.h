@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:39:16 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/06 08:53:39 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/09 12:52:10 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
+
+#define MAX_INT 2147483647
+#define MIN_INT -2147483648
 
 typedef struct node {
 	int			v;
@@ -29,7 +32,7 @@ typedef struct node {
 void	ft_putstr(char const *s);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
-int		ft_atoi(const char *str);
+int		ft_atoi(char *str);
 int		ft_is_int(const char *str);
 int		ft_isdigit(int c);
 void	ft_swap(int *ptr1, int *ptr2);
