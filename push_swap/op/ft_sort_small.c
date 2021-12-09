@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 12:29:09 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/17 16:44:38 by rburri           ###   ########.fr       */
+/*   Created: 2021/12/03 15:21:07 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/03 17:09:46 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sort_small(t_stack *a, t_stack *b)
+void	ft_sort_small(t_node **a, t_node **b)
 {
 	int	len;
 
-	len = ft_stklen(a);
-	if (ft_sorted(a) || len == 1)
+	len = ft_stklen(*a);
+	if (ft_is_sorted(a) || len == 1)
 		return ;
 	if (len == 2)
 	{
@@ -26,6 +26,6 @@ void	ft_sort_small(t_stack *a, t_stack *b)
 	}
 	if (len == 3)
 		ft_sort_three(a);
-	if (len == 4)
-		ft_sort_four(a, b, len);
+	if (len == 4 || len == 5)
+		ft_sort_ff(a, b, len);
 }

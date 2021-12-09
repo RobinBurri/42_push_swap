@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 20:41:02 by rburri            #+#    #+#             */
-/*   Updated: 2021/11/18 15:15:52 by rburri           ###   ########.fr       */
+/*   Created: 2021/12/03 14:26:01 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/09 15:00:47 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,18 @@ static int	ft_has_double(int array[], int len)
 	return (0);
 }
 
+static int	ft_load_array(int *array, char **nbs, int len)
+{
+	while (len >= 0)
+	{
+		if (ft_is_int(nbs[len]) == 1)
+			return (1);
+		array[len] = ft_atoi(nbs[len]);
+		len--;
+	}
+	return (0);
+}
+
 static int	ft_index(int array[], int len, int value)
 {
 	int	j;
@@ -52,36 +64,27 @@ static int	ft_index(int array[], int len, int value)
 	return (count);
 }
 
-static int	ft_load_array(int *array, char **argv, int len)
-{
-	while (len >= 1)
-	{
-		if (ft_is_int(argv[len]) == 1)
-			return (1);
-		array[len - 1] = ft_atoi(argv[len]);
-		len--;
-	}
-	return (0);
-}
-
-int	ft_check_and_load(int argc, char **argv, t_stack *a)
+int	ft_check_and_load(char **argv, t_node **a)
 {
 	int	i;
+	int	j;
 	int	*array;
+	int	index;
+	char **nbs;
 
-	if (argc < 2)
-		return (1);
-	array = (int *)malloc(sizeof(int) * (argc - 1));
+	nbs = ft_split(argv[1], ' ', &i);
+	array = (int *)malloc(sizeof(int) * i);
 	if (array == NULL)
 		return (1);
-	i = argc - 1;
-	if (ft_load_array(array, argv, i) != 0)
+	if (ft_load_array(array, nbs, i - 1) != 0)
 		return (1);
-	if (ft_has_double(array, argc - 1) != 0)
+	if (ft_has_double(array, i) != 0)
 		return (1);
+	j = i;
 	while (i > 0)
 	{
-		ft_push(a, array[i - 1], ft_index(array, argc - 1, array[i - 1]), 0);
+		index = ft_index(array, j, array[i - 1]);
+		ft_push(a, array[i - 1], index, (index / 9));
 		i--;
 	}
 	free(array);

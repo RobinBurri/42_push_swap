@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_find_mid.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/04 16:16:17 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/04 16:17:49 by rburri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-int	ft_find_mid(t_stack *a, int batch)
+int	ft_find_mid(t_node **a, int batch)
 {
 	t_node	*tmp;
 	int		cnt;
@@ -17,5 +29,5 @@ int	ft_find_mid(t_stack *a, int batch)
 	}
 	if (index == 0 && cnt != 0)
 		cnt = 0;
-	return 	(index / cnt);
+	return (index / cnt);
 }
