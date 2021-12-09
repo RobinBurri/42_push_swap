@@ -1,14 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_big_follow.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/09 16:06:40 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/09 16:21:16 by rburri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_select_best(t_node **a, t_node **b, int mid, int batch)
+static void	ft_select_best(t_node **a, t_node **b, int mid, int batch)
 {
 	if ((*a)->i < mid)
-	{
 		push_b(a, b, batch);
-		return (1);
-	}
-	return (0);
 }
 
 static void	ft_arrange_b(t_node **a, t_node **b)
@@ -30,28 +37,21 @@ void	ft_big_follow(t_node **a, t_node **b)
 	batch = ft_min_bat(a);
 	mid = (ft_find_mid(a, batch) + 1);
 	b_len = ft_stklen(*b);
-	if (batch != 0)
+	while (b_len < mid && ft_is_sorted(a) != 1 && batch != 0)
 	{
-		while (b_len < mid && ft_is_sorted(a) != 1)
-		{
-			if ((*b) != NULL && (*b)->n != NULL)
-				ft_arrange_b(a, b);
-			if (ft_is_sorted(a) == 1)
-				break ;
-			ft_select_best(a, b, mid, batch);
-			b_len++;
-		}
+		if ((*b) != NULL && (*b)->n != NULL)
+			ft_arrange_b(a, b);
+		if (ft_is_sorted(a) == 1)
+			break ;
+		ft_select_best(a, b, mid, batch);
+		b_len++;
 	}
-	else
+	while (ft_is_sorted(a) != 1 && batch == 0)
 	{
-		while (ft_is_sorted(a) != 1)
-		{
-			if ((*b) != NULL && (*b)->n != NULL)
-				ft_arrange_b(a, b);
-			if (ft_is_sorted(a) == 1)
-				break ;
-			push_b(a, b, batch);
-		}
+		if ((*b) != NULL && (*b)->n != NULL)
+			ft_arrange_b(a, b);
+		if (ft_is_sorted(a) == 1)
+			break ;
+		push_b(a, b, batch);
 	}
-	
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_a_has_two_left.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/09 16:06:11 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/09 16:10:26 by rburri           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static void	ft_arrange_b(t_node **a, t_node **b)
@@ -25,7 +37,7 @@ int	ft_a_has_two_left(t_node **a, t_node **b)
 		if ((*a)->i < (*a)->n->i)
 			swap_a(b);
 		push_b(a, b, (*a)->b);
-		ft_arrange_b(a , b);
+		ft_arrange_b(a, b);
 		push_b(a, b, (*a)->b);
 		return (-1);
 	}

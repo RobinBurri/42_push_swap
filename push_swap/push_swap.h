@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:39:16 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/09 14:26:28 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/09 16:34:22 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stddef.h>
 # include <stdlib.h>
 
-#define MAX_INT 2147483647
-#define MIN_INT -2147483648
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 
 typedef struct node {
 	int			v;
@@ -30,6 +30,7 @@ typedef struct node {
 
 // helpers:
 void	ft_putstr(char const *s);
+void	ft_putstr2(char const *s);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
 int		ft_atoi(char *str);
@@ -67,9 +68,10 @@ int		ft_a_has_two_left(t_node **a, t_node **b);
 int		ft_before_last_index(t_node **a);
 int		ft_find_mid(t_node **a, int batch);
 int		ft_has_bat_left(t_node *stack, int batch);
+int		ft_has_double(int array[], int len);
 // sorting
 void	ft_big_follow(t_node **a, t_node **b);
-void    ft_big_start(t_node **a, t_node **b);
+void	ft_big_start(t_node **a, t_node **b);
 void	ft_sort_big(t_node **a, t_node **b);
 void	ft_sort_small(t_node **a, t_node **b);
 void	ft_sort_ff(t_node **a, t_node **b, int len);

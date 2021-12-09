@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:53:37 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 15:47:57 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/09 16:09:25 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	s_b(t_node **stack)
 		ft_swap(&tmp->b, &tmp->n->b);
 	}
 }
+
 void	ss(t_node **a, t_node **b)
 {
 	s_a(a);

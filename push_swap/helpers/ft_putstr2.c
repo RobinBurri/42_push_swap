@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_int.c                                        :+:      :+:    :+:   */
+/*   ft_putstr2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 19:28:00 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/09 16:15:22 by rburri           ###   ########.fr       */
+/*   Created: 2021/12/09 15:55:45 by rburri            #+#    #+#             */
+/*   Updated: 2021/12/09 15:56:12 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_is_int(const char *str)
+void	ft_putstr2(char const *s)
 {
-	long long	res;
-	int			i;
-	int			sign;
+	int	i;
 
 	i = 0;
-	sign = 1;
-	res = 0;
-	while (str[i])
+	while (s[i])
 	{
-		if (ft_isdigit(str[i]) == 0 && (!(str[i] == '-' || str[i] == '+')))
-			return (1);
-		else if (str[i] == '-' || str[i] == '+')
-		{
-			if (str[i] == '-')
-				sign = -1;
-		}
+		write(2, &s[i], 1);
 		i++;
 	}
-	i = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-		res = (res * 10) + (str[i++] - '0');
-	res = (res * sign);
-	if (res >= MAX_INT || res <= MIN_INT)
-		return (1);
-	return (0);
 }

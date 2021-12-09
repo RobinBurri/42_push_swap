@@ -6,7 +6,7 @@
 #    By: rburri <rburri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 12:26:57 by rburri            #+#    #+#              #
-#    Updated: 2021/12/09 14:41:28 by rburri           ###   ########.fr        #
+#    Updated: 2021/12/09 17:10:55 by rburri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC = gcc -g
 SRCS	= \
 		helpers/ft_atoi.c		helpers/ft_is_int.c		helpers/ft_swap.c \
 		helpers/ft_isdigit.c	helpers/ft_putchar.c	helpers/ft_putnbr.c \
-		helpers/ft_putstr.c 	helpers/ft_split.c\
+		helpers/ft_putstr.c 	helpers/ft_split.c		helpers/ft_putstr2.c \
 		basic_op/ft_pop.c		basic_op/ft_print_stack.c \
 		basic_op/ft_stklen.c	basic_op/ft_stklen_bat.c	basic_op/ft_push.c \
 		basic_op/push_a.c		basic_op/push_b.c 			basic_op/rr.c \
@@ -33,7 +33,7 @@ SRCS	= \
 		op/ft_big_follow.c 		op/ft_big_start.c 			op/ft_sort_big.c \
 		op/ft_sort_small.c 		op/ft_sort_three.c 			op/ft_sort_ff.c \
 		op/ft_sort_push.c 		op/ft_find_and_send_a.c 	op/ft_is_sorted.c \
-		op/ft_has_bat_left.c	main.c
+		op/ft_has_bat_left.c	op/ft_has_double.c							main.c
 
 OBJS = $(SRCS:%.c=%.o)
 

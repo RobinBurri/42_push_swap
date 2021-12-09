@@ -6,7 +6,7 @@
 /*   By: rburri <rburri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 18:27:15 by rburri            #+#    #+#             */
-/*   Updated: 2021/12/03 19:12:02 by rburri           ###   ########.fr       */
+/*   Updated: 2021/12/09 16:23:52 by rburri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ static int	ft_arrange_a(t_node **a, t_node **b)
 void	ft_find_and_send_b(t_node **a, t_node **b, int batch, int mid)
 {
 	int	r;
-	int		res;
-	int b_len;
+	int	res;
+	int	b_len;
 
 	r = 0;
 	b_len = ft_stklen(*b);
@@ -58,17 +58,13 @@ void	ft_find_and_send_b(t_node **a, t_node **b, int batch, int mid)
 			&& (*b) != NULL && (*b)->n != NULL)
 			res += ft_arrange_a(a, b);
 		res += ft_select_bestb(a, b, mid, &b_len);
-		
 		if ((*a) != NULL && (*a)->n != NULL
 			&& (*b) != NULL && (*b)->n != NULL)
 			res += ft_arrange_a(a, b);
-		if (res == 0 && (*b)->i <= mid)
+		while (res == 0 && (*b)->i <= mid)
 		{
-			while ((*b)->i <= mid)
-			{
-				rotate_b(b);
-				r++;
-			}
+			rotate_b(b);
+			r++;
 		}
 	}
 	while (ft_last_el_bat(b) == batch && batch != 0)
@@ -77,13 +73,14 @@ void	ft_find_and_send_b(t_node **a, t_node **b, int batch, int mid)
 
 void	ft_sort_b(t_node **a, t_node **b)
 {
-    int bat;
-	int mid;
-	int len;
+	int	bat;
+	int	mid;
+	int	len;
+
 	bat = ft_max_bat(b);
 	while (ft_has_bat_left(*b, bat) == 1)
 	{
-    	bat = ft_max_bat(b);
+		bat = ft_max_bat(b);
 		len = ft_b_has_two_left(a, b, bat);
 		if (len < 0)
 			return ;
@@ -91,10 +88,8 @@ void	ft_sort_b(t_node **a, t_node **b)
 			mid = ft_find_mid(b, bat);
 		else
 			mid = ft_min_ind_bat(b, bat);
-
 		ft_find_and_send_b(a, b, bat, mid);
-
 		if (ft_is_sorted(a) != 1)
 			break ;
-    }
+	}
 }
