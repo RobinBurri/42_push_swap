@@ -14,7 +14,7 @@ NAME = push_swap
 
 FLAGS = -Wall -Wextra -Werror
 
-CC = gcc
+CC = gcc -g
 
 SRCS	= \
 		helpers/ft_atoi.c		helpers/ft_is_int.c		helpers/ft_swap.c \

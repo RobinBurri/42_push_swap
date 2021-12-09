@@ -23,6 +23,14 @@ static void	ft_solution(t_node **a, t_node **b)
 		ft_sort_big(a, b);
 }
 
+static void	ft_free_stacks(t_node **a, t_node **b)
+{
+	while ((*b) != NULL)
+		ft_pop(b);
+	while ((*a) != NULL)
+		ft_pop(a);
+}
+
 int	main(int argc, char **argv)
 {
 	t_node	*a;
@@ -45,5 +53,6 @@ int	main(int argc, char **argv)
 	if (ft_is_sorted(&a) == 1)
 		return (0);
 	ft_solution(&a, &b);
+	ft_free_stacks(&a, &b);
 	return (0);
 }
