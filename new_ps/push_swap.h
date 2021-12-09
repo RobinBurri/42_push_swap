@@ -17,8 +17,6 @@
 # include <stddef.h>
 # include <stdlib.h>
 
-# define INT_MAX 2147483647
-
 typedef struct node {
 	int			v;
 	int			i;
@@ -35,10 +33,10 @@ int		ft_atoi(const char *str);
 int		ft_is_int(const char *str);
 int		ft_isdigit(int c);
 void	ft_swap(int *ptr1, int *ptr2);
+// basic_op
 void	ft_print_stack(t_node *stack);
 int		ft_stklen(t_node *stack);
 int		ft_stklen_bat(t_node **a, int batch);
-// basic_op
 void	ft_pop(t_node **stack);
 int		ft_push(t_node **stack, int value, int index, int batch);
 void	push_a(t_node **a, t_node **b, int batch);
@@ -57,17 +55,14 @@ int		ft_check_and_load(int argc, char **argv, t_node **a);
 int		ft_last_index(t_node **a);
 int		ft_min_bat(t_node **a);
 int		ft_max_bat(t_node **a);
-// int		ft_max_ind_bat(t_node **a, int batch);
 int		ft_min_ind_bat(t_node **a, int batch);
 int		ft_rev_sorted(t_node **stack);
 int		ft_last_el_bat(t_node **a);
 int		ft_b_has_two_left(t_node **a, t_node **b, int batch);
 int		ft_a_has_two_left(t_node **a, t_node **b);
 int		ft_before_last_index(t_node **a);
-// int		ft_before_last_bat(t_node **a);
 int		ft_find_mid(t_node **a, int batch);
 int		ft_has_bat_left(t_node *stack, int batch);
-// int		ft_has_two_bat(t_node *stack);
 // sorting
 void	ft_big_follow(t_node **a, t_node **b);
 void    ft_big_start(t_node **a, t_node **b);
